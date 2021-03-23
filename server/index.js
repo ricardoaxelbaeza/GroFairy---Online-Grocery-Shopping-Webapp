@@ -1,7 +1,10 @@
 const express = require('express')
 const app = express()
+const path = require("path")
 const mysql = require('mysql')
 
+
+const APP_PORT = 4000;
 
 const db = mysql.createPool ({
     host: 'localhost',
@@ -12,10 +15,8 @@ const db = mysql.createPool ({
 });
 
 
-app.get("/", (req, res) => {
-    res.send('Ahoy bortha!!!');
-});
+app.use(express.static(path.join(__dirname, 'frontend','build')));
 
-app.listen(3001, () => {
-    console.log("running on port 3010");
+app.listen(APP_PORT, () => {
+    console.log("running on port", APP_PORT);
 });
