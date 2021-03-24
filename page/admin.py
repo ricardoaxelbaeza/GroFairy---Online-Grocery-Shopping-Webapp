@@ -1,7 +1,5 @@
 from django.contrib import admin
 from .models import User
-
-from .models import User
 from .models import Grocery_Store
 from .models import Delivery_Driver
 from .models import Grocery_Product

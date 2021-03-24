@@ -1,4 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render 
+from rest_framework.views import APIView 
+from .models import *
+from rest_framework.response import Response 
+from .serializer import *
 from .models import User
 from .models import Grocery_Store
 from .models import Delivery_Driver
@@ -14,7 +18,7 @@ from .models import User_Preferred_Tag
 
 # When a home request is received, displays home.html
 def home(request):
-    return render(request, 'page/home.html')
+    return render(request, 'home.html')
 
 # When a dbdump request is received, displays dbdump.html
 def dbdump(request):
@@ -33,6 +37,39 @@ def dbdump(request):
 
     # Returns the dbdump.html with all variables to be used in the html set with strings.
     # To add more, just put a comma after the variables and follow suit.
-    return render(request, 'page/dbdump.html', {'users': all_users, 'stores': all_stores, 'drivers': all_drivers, 'grocery_products': all_grocery_products,
+    return render(request, 'dbdump.html', {'users': all_users, 'stores': all_stores, 'drivers': all_drivers, 'grocery_products': all_grocery_products,
      'grocery_tags': all_grocery_tags, 'orders': all_orders, 'o_stores': order_stores, 'o_items': order_items, 'gs_stock': grocery_store_stock,
       'user_stores': user_pref_stores, 'user_tags': user_pref_tags})
+
+def grocerystores(request):
+    all_stores = Grocery_Store.objects.all
+
+    return render(request, 'grocerystores.html', {'stores': all_stores})
+
+class UserView(APIView): 
+    
+    serializer_class = UserSerializer 
+  
+    def get(self, request): 
+        detail = [ {'user_id': detail.user_id, 'first_name': detail.first_name, 'last_name': detail.last_name, 'date_of_birth': detail.date_of_birth, 'email': detail.email, 'password': detail.password, 'address': detail.address, 'phone_number': detail.phone_number } for detail in User.objects.all() ] 
+        return Response(detail) 
+  
+    def post(self, request): 
+        serializer = UserSerializer(data=request.data) 
+        if serializer.is_valid(raise_exception=True): 
+            serializer.save() 
+            return  Response(serializer.data) 
+
+class GroceryStoreView(APIView): 
+    
+    serializer_class = GroceryStoreSerializer 
+  
+    def get(self, request): 
+        detail = [ {'store_id': detail.store_id, 'store_name': detail.store_name, 'store_address': detail.store_address } for detail in Grocery_Store.objects.all() ]  
+        return Response(detail) 
+  
+    def post(self, request): 
+        serializer = GroceryStoreSerializer(data=request.data) 
+        if serializer.is_valid(raise_exception=True): 
+            serializer.save() 
+            return  Response(serializer.data) 
