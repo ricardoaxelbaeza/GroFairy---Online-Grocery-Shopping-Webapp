@@ -1,12 +1,11 @@
-
 import react from 'react'
 import './App.css';
 import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/pages/Home';
 
-import axios from "axios"; 
-  
+
+
 function App() {
   return (
     <>
@@ -20,4 +19,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;
