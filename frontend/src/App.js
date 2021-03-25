@@ -5,6 +5,7 @@ import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/pages/Home';
 import 'antd/dist/antd.css'; 
 import GroceryStores from './components/GroceryStores';
+import SignUp from './components/SignUp';
 
 
 
@@ -16,6 +17,7 @@ function App() {
         <Switch>
          <Route path='/' exact component={Home}/>
          <Route path='/grocerystores' exact component={GroceryStores}/>
+         <Route path='/signup' exact component={SignUp}/>
         </Switch>
       </Router>
     </>

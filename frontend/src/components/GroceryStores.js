@@ -4,7 +4,7 @@ import React from 'react';
 
 const GroceryStores = (props) => {
     return(
-      <h1>hello world</h1>
+      <h1>Grocery Stores</h1>
   // <List
   //   itemLayout="vertical"
   //   size="large"
