@@ -4,8 +4,8 @@ import Navbar from './components/Navbar';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/pages/Home';
 // import 'antd/dist/antd.css'; 
-import GroceryStores from './components/GroceryStores';
-import SignUp from './components/SignUp';
+import GroceryStores from './components/pages/GroceryStores';
+import SignUp from './components/pages/SignUp';
 
 
 
@@ -21,7 +21,7 @@ function App() {
         </Switch>
       </Router>
     </>
-  );
+  )
 }
 
 export default App;
