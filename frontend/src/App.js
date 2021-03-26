@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css';
 import Navbar from './components/Navbar';
-import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/pages/Home';
 // import 'antd/dist/antd.css'; 
 import GroceryStores from './components/pages/GroceryStores';
@@ -13,11 +13,11 @@ function App() {
   return (
     <>
       <Router>
-       <Navbar/>
+        <Navbar />
         <Switch>
-         <Route path='/' exact component={Home}/>
-         <Route path='/grocerystores' exact component={GroceryStores}/>
-         <Route path='/signup' exact component={SignUp}/>
+          <Route path='/' exact component={Home} />
+          <Route path='/grocerystores' exact component={GroceryStores} />
+          <Route path='/signup' exact component={SignUp} />
         </Switch>
       </Router>
     </>
