@@ -4,11 +4,12 @@ import { Done } from '@material-ui/icons'
 import makeStyles from './GroceryStyles'
 import { Link } from 'react-router-dom';
 
+var counter = 0;
 
 const store = ({ store }) => {
+    counter++;
     const classes = makeStyles();
-    var random = getRandomInt(14);
-    var str = "/StoreView/" + random;
+    var str = "/StoreView/" + counter;
     return (
         <div>
             <Card className={classes.root}>
@@ -39,10 +40,6 @@ const store = ({ store }) => {
             </Card>
         </div>
     )
-}
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
 }
 
 export default store
