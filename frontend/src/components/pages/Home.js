@@ -4,11 +4,11 @@ import HeroSection from '../HeroSection'
 
 
 
-function Home(){
-    return(
-    <>
-     <HeroSection/>
-    </>
+function Home() {
+    return (
+        <>
+            <HeroSection />
+        </>
     )
 }
 
