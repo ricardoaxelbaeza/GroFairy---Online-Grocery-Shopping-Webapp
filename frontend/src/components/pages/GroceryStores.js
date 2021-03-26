@@ -1,15 +1,15 @@
 import React from 'react';
-import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
-import { List, Avatar, Space } from 'antd';
+// import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
+// import { List, Avatar, Space } from 'antd';
 
 
 
-const IconText = ({ icon, text }) => (
-  <Space>
-    {React.createElement(icon)}
-    {text}
-  </Space>
-);
+// const IconText = ({ icon, text }) => (
+//   <Space>
+//     {React.createElement(icon)}
+//     {text}
+//   </Space>
+// );
 
 
 const GroceryStores = (props) => {
