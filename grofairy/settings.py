@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'grofairy',
     'rest_framework',
     'corsheaders',
 ]
@@ -141,3 +142,4 @@ STATICFILES_DIRS = [
 
 # The number for 54 is the elastic ip I used for the apache server and 127 is for when you want to run this locally.
 ALLOWED_HOSTS=['EC2_DNS_NAME', '54.151.124.251', '127.0.0.1', 'localhost']
+CORS_ORIGIN_WHITELIST = ['http://localhost:1977']
