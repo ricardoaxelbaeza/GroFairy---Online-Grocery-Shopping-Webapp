@@ -13,19 +13,19 @@ const store = ({ store }) => {
     return (
         <div>
             <Card className={classes.root}>
-                <CardMedia className={classes.media} image={store.image} title={store.name} />
+                <CardMedia className={classes.media} title={store.store_name} />
                 <CardContent>
                     <div className={classes.cardContent}>
                         <Typography variant='h5' gutterBottom>
-                            {store.name}
+                            {store.store_name}
                         </Typography>
                         <Typography variant='h5'>
-                            {store.location}
+                            {store.store_address}
                         </Typography>
-                    </div>
-                    <Typography variant='body2' color='textSecondary'>
+                    </div><Typography variant='body2' color='textSecondary'>
                         {store.description}
                     </Typography>
+                    {/*  */}
                 </CardContent>
                 <CardActions disableSpacing ClassName={classes.cardActions}>
                     <IconButton aria-label='View store'>
