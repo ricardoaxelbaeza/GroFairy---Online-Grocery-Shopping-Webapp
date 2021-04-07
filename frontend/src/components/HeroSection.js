@@ -5,7 +5,7 @@ import './HeroSection.css'
 
 export default function HeroSection() {
   return (
-    <div className='hero-container' style ={{
+    <div className='hero-container' style={{
       backgroundColor: 'pink',
     }}>
       <img src={process.env.PUBLIC_URL + "/GroFairyLogo.jpeg"} width="1792" alt="GroFairy Logo" />

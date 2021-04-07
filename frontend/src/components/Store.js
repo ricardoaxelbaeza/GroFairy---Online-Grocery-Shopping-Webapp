@@ -4,12 +4,10 @@ import { Done } from '@material-ui/icons'
 import makeStyles from './GroceryStyles'
 import { Link } from 'react-router-dom';
 
-var counter = 0;
 
 const store = ({ store }) => {
-    counter++;
     const classes = makeStyles();
-    var str = "/StoreView/" + counter;
+    var str = "/StoreView/" + store.store_id
     return (
         <div>
             <Card className={classes.root}>
