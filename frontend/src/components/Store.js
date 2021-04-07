@@ -11,7 +11,7 @@ const store = ({ store }) => {
     return (
         <div>
             <Card className={classes.root}>
-                <CardMedia className={classes.media} title={store.store_name} />
+                <CardMedia className={classes.media} image={store.store_image} title={store.store_name} />
                 <CardContent>
                     <div className={classes.cardContent}>
                         <Typography variant='h5' gutterBottom>

@@ -33,6 +33,7 @@ class Grocery_Store(models.Model):
     store_id = models.AutoField(primary_key=True)
     store_name = models.CharField(max_length=45)
     store_address = models.CharField(max_length=45)
+    store_image = models.CharField(max_length=100)
 
     class Meta:
         db_table = "grocery_stores"
