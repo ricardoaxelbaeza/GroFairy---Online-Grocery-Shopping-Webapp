@@ -6,11 +6,14 @@ import './HeroSection.css'
 export default function HeroSection() {
   return (
     <div className='hero-container' style ={{
-      backgroundColor: 'pink',
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/GroFairy3.jpeg'})` 
+     
     }}>
-      <img src={process.env.PUBLIC_URL + "/GroFairyLogo.jpeg"} width="1792" alt="GroFairy Logo" />
-      <h1>Order Groceries On Demand</h1>
-      <p>What are you waiting for?</p>
+      {/* <img src={process.env.PUBLIC_URL + "/GroFairyLogo.jpeg"} width="1792" alt="GroFairy Logo" /> */}
+      
+      <p></p><p></p><p></p><p></p><p></p><p></p><p></p>
+     
+      <p></p>
       <div className='hero-btns'>
         <Button
           className='btns'
