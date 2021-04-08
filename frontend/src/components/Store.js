@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const store = ({ store }) => {
     const classes = makeStyles();
-    var str = "/StoreView/" + store.store_id
+    var str = "/groceryproducts/?id=" + store.store_id
     return (
         <div>
             <Card className={classes.root}>

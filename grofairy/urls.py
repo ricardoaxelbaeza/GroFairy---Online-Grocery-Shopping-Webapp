@@ -30,6 +30,7 @@ urlpatterns = [
     path('', include('page.urls')), 
     path('user/', UserView.as_view(), name="something"),
     path('grocerystores/', GroceryStoreView.as_view(), name="something"),
+    path('groceryproducts/', GroceryStoreStockView.as_view(), name="something2"),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
