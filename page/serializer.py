@@ -9,4 +9,4 @@ class UserSerializer(serializers.ModelSerializer):
 class GroceryStoreSerializer(serializers.ModelSerializer): 
     class Meta: 
         model = Grocery_Store
-        fields = ['store_id', 'store_name', 'store_address'] 
+        fields = ['store_id', 'store_name', 'store_address', 'store_image'] 
