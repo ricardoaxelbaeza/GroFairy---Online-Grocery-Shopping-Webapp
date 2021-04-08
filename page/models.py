@@ -115,6 +115,7 @@ class Grocery_Store_Stock(models.Model):
     product = models.OneToOneField(Grocery_Product, on_delete=models.CASCADE)
     stock = models.PositiveIntegerField()
     unit_price = models.DecimalField(max_digits=65, decimal_places=2)
+    product_image = models.CharField(max_length=100)
 
     class Meta:
         db_table = "grocery_store_stocks"
