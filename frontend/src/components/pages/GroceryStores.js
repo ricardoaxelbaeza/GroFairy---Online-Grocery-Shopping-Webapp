@@ -18,20 +18,21 @@ import { useState, useEffect } from 'react'
 // ]
 
 const GroceryStores = (props) => {
-  
+
   const [stores, setStores] = useState([])
 
   useEffect(() => {
     fetch('http://127.0.0.1:8000/grocerystores/?format=json')
-    .then(resp => resp.json())
-    .then(resp => {
-      console.log(resp)
-    setStores(resp)})
+      .then(resp => resp.json())
+      .then(resp => {
+        console.log(resp)
+        setStores(resp)
+      })
 
   }, [])
   return (
     <>
-      <Grid container justify='center' spacing={3} style ={{
+      <Grid container justify='center' spacing={3} style={{
         backgroundColor: '#EE6590',
       }}>
         {stores.map((store) => (

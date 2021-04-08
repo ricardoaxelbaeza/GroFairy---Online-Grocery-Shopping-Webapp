@@ -65,7 +65,7 @@ class GroceryStoreView(APIView):
     serializer_class = GroceryStoreSerializer 
   
     def get(self, request): 
-        detail = [ {'store_id': detail.store_id, 'store_name': detail.store_name, 'store_address': detail.store_address } for detail in Grocery_Store.objects.all() ]  
+        detail = [ {'store_id': detail.store_id, 'store_name': detail.store_name, 'store_address': detail.store_address, 'store_image' : detail.store_image, } for detail in Grocery_Store.objects.all() ]  
         return Response(detail) 
   
     def post(self, request): 

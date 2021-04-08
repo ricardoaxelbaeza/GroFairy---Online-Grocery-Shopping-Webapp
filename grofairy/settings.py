@@ -141,5 +141,10 @@ STATICFILES_DIRS = [
 ]
 
 # The number for 54 is the elastic ip I used for the apache server and 127 is for when you want to run this locally.
+<<<<<<< HEAD
 ALLOWED_HOSTS=['EC2_DNS_NAME', '54.151.124.251', '127.0.0.1', 'localhost']
 # CORS_ORIGIN_WHITELIST = ['http://localhost:1977']
+=======
+ALLOWED_HOSTS=['EC2_DNS_NAME', '54.151.124.251', '127.0.0.1', 'localhost', '*']
+CORS_ORIGIN_WHITELIST = ['http://localhost:1977']
+>>>>>>> 3a4f68a4f56e03ba7a6c4d1ea3ee02ecb3709a6c
