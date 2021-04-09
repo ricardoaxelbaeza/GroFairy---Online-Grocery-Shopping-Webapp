@@ -11,13 +11,13 @@ const product = ({ product }) => {
                 <CardContent>
                     <div className={classes.cardContent}>
                         <Typography variant='h5' gutterBottom>
-                            {product.product_id}
+                            product name{product.product_id}
                         </Typography>
                         <Typography variant='h5'>
-                            {product.stock}
+                        ${product.unit_price}
                         </Typography>
                     </div><Typography variant='body2' color='textSecondary'>
-                        {product.unit_price}
+                        Available Stock: {product.stock}
                     </Typography>
                     {/*  */}
                 </CardContent>
