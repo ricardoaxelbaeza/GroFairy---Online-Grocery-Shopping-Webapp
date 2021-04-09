@@ -11,7 +11,7 @@ const product = ({ product }) => {
                 <CardContent>
                     <div className={classes.cardContent}>
                         <Typography variant='h5' gutterBottom>
-                            product name{product.product_id}
+                            Apple (5 oz.)
                         </Typography>
                         <Typography variant='h5'>
                         ${product.unit_price}
