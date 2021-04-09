@@ -14,7 +14,8 @@ class GroceryStoreSerializer(serializers.ModelSerializer):
 class GroceryStoreStockSerializer(serializers.ModelSerializer): 
     class Meta: 
         model = Grocery_Store_Stock
-        fields = ['store_id', 'product_id', 'stock', 'unit_price', 'product_image'] 
+        fields = ['store_id', 'product_id', 'stock', 'unit_price', 'product_image']
+        depth = 1
 
 class GroceryProductSerializer(serializers.ModelSerializer): 
     class Meta: 

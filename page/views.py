@@ -14,6 +14,7 @@ from .models import Order_Item
 from .models import Grocery_Store_Stock
 from .models import User_Preferred_Store
 from .models import User_Preferred_Tag
+import random
 
 
 # When a home request is received, displays home.html
@@ -87,9 +88,12 @@ class GroceryStoreStockView(APIView):
     serializer_class = GroceryStoreStockSerializer
 
     def get(self, request):
+        tempID = random.randint(1, 10)
         detail = [{'store_id': detail.store_id, 'product_id': detail.product_id, 'stock': detail.stock,
-                   'unit_price': detail.unit_price, 'product_image' : detail.product_image,} for detail in Grocery_Store_Stock.objects.all()]
+                   'unit_price': detail.unit_price, 'product_image' : detail.product_image, 'product_name' : ""} for detail in Grocery_Store_Stock.objects.filter(pk=tempID)]
 
+        # for i in range(len(detail)):
+        #    detail[i] = Grocery_Product.objects.get(pk=detail[i].get("product_id"))
         return Response(detail)
 
     def post(self, request):
