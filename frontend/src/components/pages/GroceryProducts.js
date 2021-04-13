@@ -6,9 +6,15 @@ import { useState, useEffect } from 'react'
 const GroceryProducts = (props) => {
 
     const [products, setProducts] = useState([])
+    var id = getParameter('id')
+
+    function getParameter(parameterName) {
+        let parameters = new URLSearchParams(window.location.search);
+        return parameters.get(parameterName);
+    }
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/groceryproducts/?format=json')
+        fetch('http://127.0.0.1:8000/groceryproducts/?id=' + id)
             .then(resp => resp.json())
             .then(resp => {
                 console.log(resp)

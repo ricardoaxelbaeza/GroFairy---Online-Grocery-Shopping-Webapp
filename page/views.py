@@ -84,16 +84,22 @@ class GroceryStoreView(APIView):
 
 
 class GroceryStoreStockView(APIView):
-
     serializer_class = GroceryStoreStockSerializer
 
-    def get(self, request):
-        tempID = random.randint(1, 10)
+    def get(self, request, *args, **kwargs):
+        # future note: to get multiple params, insert '&' inbetween params.
+        # e.g. ?id=4&name=noel&year=2021
+        id = request.query_params['id']
         detail = [{'store_id': detail.store_id, 'product_id': detail.product_id, 'stock': detail.stock,
-                   'unit_price': detail.unit_price, 'product_image' : detail.product_image, 'product_name' : ""} for detail in Grocery_Store_Stock.objects.filter(pk=tempID)]
+                   'unit_price': detail.unit_price} for detail in Grocery_Store_Stock.objects.filter(pk=id)]
 
-        # for i in range(len(detail)):
-        #    detail[i] = Grocery_Product.objects.get(pk=detail[i].get("product_id"))
+        # add grocery product names to the list
+        for i in range(detail.__len__()):
+            detail[i].update({'product_name': Grocery_Product.objects.get(
+                pk=detail[i].get('product_id')).product_name})
+            detail[i].update({'product_image': Grocery_Product.objects.get(
+                pk=detail[i].get('product_id')).product_image})
+
         return Response(detail)
 
     def post(self, request):

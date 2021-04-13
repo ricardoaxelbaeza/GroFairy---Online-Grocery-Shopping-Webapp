@@ -11,10 +11,10 @@ const product = ({ product }) => {
                 <CardContent>
                     <div className={classes.cardContent}>
                         <Typography variant='h5' gutterBottom>
-                            Apple (5 oz.)
+                            {product.product_name}
                         </Typography>
                         <Typography variant='h5'>
-                        ${product.unit_price}
+                            ${product.unit_price}
                         </Typography>
                     </div><Typography variant='body2' color='textSecondary'>
                         Available Stock: {product.stock}
