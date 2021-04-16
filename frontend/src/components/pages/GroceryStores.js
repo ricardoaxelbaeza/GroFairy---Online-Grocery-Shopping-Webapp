@@ -22,7 +22,7 @@ const GroceryStores = (props) => {
   const [stores, setStores] = useState([])
 
   useEffect(() => {
-    fetch('http://127.0.0.1:8000/grocerystores/?format=json')
+    fetch('http://18.144.67.141:8000/grocerystores/?format=json')
       .then(resp => resp.json())
       .then(resp => {
         console.log(resp)

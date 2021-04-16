@@ -14,7 +14,7 @@ const GroceryProducts = (props) => {
     }
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/groceryproducts/?id=' + id)
+        fetch('http://18.144.67.141:8000/groceryproducts/?id=' + id)
             .then(resp => resp.json())
             .then(resp => {
                 console.log(resp)
