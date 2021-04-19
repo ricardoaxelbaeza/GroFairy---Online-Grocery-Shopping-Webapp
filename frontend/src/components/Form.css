@@ -1,5 +1,5 @@
-.form-container {
-    margin: 100px auto;
+  .form-container {
+    margin: 1em auto;
     width: 1000px;
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
     position: relative;
@@ -65,11 +65,11 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%;
-    height: 100%;
+    width: 50%;
+    height: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: normal;
     align-items: center;
   }
   
@@ -95,14 +95,15 @@
   .form-label {
     display: inline-block;
     font-size: 0.8rem;
+    text-decoration: underline;
     margin-bottom: 6px;
-    color: #fff;
+    color: #000;
   }
   
   .form-input {
     display: block;
     padding-left: 10px;
-    outline: none;
+    outline-style: solid;
     border-radius: 2px;
     height: 40px;
     width: 100%;
@@ -143,13 +144,13 @@
   .form-input-login {
     font-size: 0.8rem;
     margin-top: 10px;
-    color: #fff;
+    color: #000;
     width: 80%;
     text-align: center;
   }
   
   .form-input-login a {
-    text-decoration: none;
+    text-decoration: underline;
     color: #27cdff;
     font-weight: 600;
   }
