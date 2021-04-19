@@ -57,6 +57,21 @@ function Navbar() {
                         </li>
                     </ul>
                     {button && <Button buttonStyle="btn--outline">SIGN UP</Button>}
+                  
+                    <li className="nav-shoppingcart">
+                            <Link to="/shoppingcart" className="nav-links" onClick={closeMobileMenu}>
+                             <i class="fas fa-shopping-cart"></i>
+
+                    </Link>
+                    
+                        </li>
+
+
+            
+
+
+                    
+
                 </div>
             </nav>
         </>
