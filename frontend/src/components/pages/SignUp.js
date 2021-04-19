@@ -1,87 +1,123 @@
 import React from 'react';
-import useForm from '../useForm';
-import validate from '../validateInfo';
-import Form from '../Form.css'
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import TextField from '@material-ui/core/TextField';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 
-const SignUp = (submitForm) => {
-    const { handleChange, values, handleSubmit, errors } = useForm(submitForm, validate);
-    return (
-
-        <div className='form-content-right'>
-            <form className='form' onSubmit={handleSubmit}>
-                <h3>
-                    Get started with us today! Create your account
-                    by filling out the information below.
-                </h3>
-                <div className='form-inputs'>
-                    <label htmlFor='username' className='form-label'>
-                        Username
-                    </label>
-                    <input
-                        id='username'
-                        type='text'
-                        name='username'
-                        className='form-input'
-                        placeholder='Enter your username'
-                        value={values.username}
-                        onChange={handleChange} />
-                    {errors.username && <p>{errors.username}</p>}
-                </div>
-                <div className='form-inputs'>
-                    <label htmlFor='email' className='form-label'>
-                        Email
-                    </label>
-                    <input
-                        id='email'
-                        type='email'
-                        name='email'
-                        className='form-input'
-                        placeholder='Enter your email'
-                        value={values.email}
-                        onChange={handleChange} />
-                    {errors.email && <p>{errors.email}</p>}
-                </div>
-                <div className='form-inputs'>
-                    <label htmlFor='password' className='form-label'>
-                        Password
-                    </label>
-                    <input
-                        id='password'
-                        type='password'
-                        name='password'
-                        className='form-input'
-                        placeholder='Enter your password'
-                        value={values.password}
-                        onChange={handleChange} />
-                    {errors.password && <p>{errors.password}</p>}
-                </div>
-                <div className='form-inputs'>
-                    <label htmlFor='password2' className='form-label'>
-                        Confirm Password
-                    </label>
-                    <input
-                        id='password2'
-                        type='password'
-                        name='password2'
-                        className='form-input'
-                        placeholder='Confirm your password'
-                        value={values.password2}
-                        onChange={handleChange} />
-                    {errors.password2 && <p>{errors.password2}</p>}
-                </div>
-                <button className='form-input-btn' type='submit'>
-                    Sign up
-                </button>
-                <span className='form-input-login'>
-                    <p>
-                        Already have an account? Login <a
-                            href='https://google.com'>here
-                    </a>
-                    </p>
-                </span>
-            </form>
-        </div>
-    )
+function SignUp() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'© '}
+      <Link color="inherit" href="wing.png">
+        Grofairy
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
 }
 
-export default SignUp;
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    marginTop: theme.spacing(8),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing(1),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+  image: {
+    flex: 1,
+    width: null,
+    height: null,
+    resizeMode: 'contain'
+},
+}));
+
+export default function SignIn() {
+  const classes = useStyles();
+
+  return (
+    <Container component="main" maxWidth="xs">
+      <CssBaseline />
+      <div className={classes.paper}>
+        <Avatar className={classes.avatar}>
+          <img className='logo-img' src='wing.png' alt='logo' />
+        </Avatar>
+        <Typography component="h1" variant="h5">
+          Sign in
+        </Typography>
+        <form className={classes.form} noValidate>
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            id="email"
+            label="Email Address"
+            name="email"
+            autoComplete="email"
+            autoFocus
+          />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            name="password"
+            label="Password"
+            type="password"
+            id="password"
+            autoComplete="current-password"
+          />
+          <FormControlLabel
+            control={<Checkbox value="remember" color="primary" />}
+            label="Remember me"
+          />
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
+            Sign In
+          </Button>
+          <Grid container>
+            <Grid item xs>
+              <Link href="#" variant="body2">
+                Forgot password?
+              </Link>
+            </Grid>
+            <Grid item>
+              <Link href="#" variant="body2">
+                {"Don't have an account? Sign Up"}
+              </Link>
+            </Grid>
+          </Grid>
+        </form>
+      </div>
+      <Box mt={8}>
+        <SignUp />
+      </Box>
+    </Container>
+  );
+}

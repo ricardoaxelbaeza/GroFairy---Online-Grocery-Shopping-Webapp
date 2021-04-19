@@ -27,7 +27,7 @@ const store = ({ store }) => {
                 </CardContent>
                 <CardActions disableSpacing ClassName={classes.cardActions}>
                     <IconButton aria-label='View store'>
-                        <Link to={str} className="nav-links" style={{
+                        <Link to={str} className={classes.navLinks} style={{
                             color: 'black',
                         }}>
                             View Store Page

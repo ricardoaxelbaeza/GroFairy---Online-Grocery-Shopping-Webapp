@@ -6,9 +6,15 @@ import { useState, useEffect } from 'react'
 const GroceryProducts = (props) => {
 
     const [products, setProducts] = useState([])
+    var id = getParameter('id')
+
+    function getParameter(parameterName) {
+        let parameters = new URLSearchParams(window.location.search);
+        return parameters.get(parameterName);
+    }
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8000/groceryproducts/?format=json')
+        fetch('http://54.151.124.251:8000/groceryproducts/?id=' + id)
             .then(resp => resp.json())
             .then(resp => {
                 console.log(resp)
@@ -22,7 +28,7 @@ const GroceryProducts = (props) => {
                 backgroundColor: '#EE6590',
             }}>
                 {products.map((product) => (
-                    <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
+                    <Grid item key={product.id} xs={12} sm={6} md={3} lg={2}>
                         <Product product={product} />
                     </Grid>
                 ))}

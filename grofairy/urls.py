@@ -27,7 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # map page urls to site. value on left can be renamed to anything you wish to be at the beginning of the url
     # e.g. 'page/' to allow for localhost:8000/page/ and /page/about
-    path('', include('page.urls')), 
+    path('', include('page.urls')),
     path('user/', UserView.as_view(), name="something"),
     path('grocerystores/', GroceryStoreView.as_view(), name="something"),
     path('groceryproducts/', GroceryStoreStockView.as_view(), name="something2"),
