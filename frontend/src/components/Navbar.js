@@ -36,7 +36,7 @@ function Navbar() {
                                 Sign Up
                             </Link>
                         </li>
-                        <li className="nab-item">
+                        <li className="nav-item">
                             <Link to="/shoppingcart" className="nav-links" onClick={closeMobileMenu}>
                                 <ShoppingCartIcon />
                             </Link>
