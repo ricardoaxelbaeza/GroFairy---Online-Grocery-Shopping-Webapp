@@ -18,6 +18,7 @@ const product = ({ product }) => {
                         </Typography>
                     </div><Typography variant='body2' color='textSecondary'>
                         Available Stock: {product.stock}
+                        <button>Add To Cart</button>
                     </Typography>
                     {/*  */}
                 </CardContent>
