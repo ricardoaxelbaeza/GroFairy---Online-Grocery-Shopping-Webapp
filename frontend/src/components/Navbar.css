@@ -46,12 +46,8 @@
   }
   
   .nav-item {
-    height: 80px;
+    height: 60px;
     margin: 0 auto;
-  }
-
-  .nav-shoppingcart{
-
   }
   
   .nav-links {
@@ -107,8 +103,9 @@
   
     .nav-links {
       text-align: center;
-      padding: 2rem;
-      width: 100%;
+      width: 100vw;
+      margin-right: auto;
+      margin-right: auto;
       display: table;
     }
   
@@ -138,21 +135,6 @@
     .fa-times {
       color: #fff;
       font-size: 2rem;
-    }
-  
-    .nav-links-mobile {
-      display: block;
-      text-align: center;
-      margin: 2rem auto;
-      border-radius: 4px;
-      width: 80%;
-      text-decoration: none;
-      font-size: 1.5rem;
-      background-color: transparent;
-      color: #fff;
-      padding: 14px 20px;
-      border: 1px solid #fff;
-      transition: all 0.3s ease-out;
     }
   
     .nav-links-mobile:hover {
