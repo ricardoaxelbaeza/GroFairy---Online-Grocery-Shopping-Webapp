@@ -33,7 +33,7 @@ const GroceryStores = (props) => {
   return (
     <>
       <Grid container justify='center' spacing={3} style={{
-        backgroundColor: '#EE6590',
+        backgroundColor: '#EE6590', maxWidth: '99vw'
       }}>
         {stores.map((store) => (
           <Grid item key={store.id} xs={12} sm={6} md={4} lg={3}>
