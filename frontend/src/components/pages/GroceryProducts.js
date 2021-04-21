@@ -5,13 +5,14 @@ import { useState, useEffect } from 'react'
 
 const GroceryProducts = (props) => {
 
-    const [products, setProducts] = useState([])
+    const [products, setProducts] = useState([]);
     var id = getParameter('id')
 
     function getParameter(parameterName) {
         let parameters = new URLSearchParams(window.location.search);
         return parameters.get(parameterName);
     }
+    
 
     useEffect(() => {
         fetch('http://54.151.124.251:8000/groceryproducts/?id=' + id)

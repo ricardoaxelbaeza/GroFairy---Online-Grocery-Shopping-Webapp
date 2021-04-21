@@ -1,16 +1,30 @@
-import React from 'react'
 import '../../App.css'
 import HeroSection from '../HeroSection'
+import "./ShoppingCart.css";
+import CartItem from "./CartItem";
+import product from "../Product.js";
 
 
-
-function ShoppingCart() {
+const ShoppingCart = () => {
     return (
-        <>
-           <p>Welcome to Your Shopping Cart</p>
-        </>
-    )
-}
+        <div className = "shoppingcart">
+            <div className = "shoppingcart_left">
+                <h2>Shopping cart</h2>
+
+                <CartItem />
+            </div>
+            <div className = "shoppingcart_right">
+                <div className ="shoppingcart_info">
+                    <p>Subtotal (0) items</p>
+                    <p>$ </p>
+                </div>
+                <div>
+                    <button>Proceed to Checkout</button>
+                </div>
+        </div>
+    </div>
+    );
+};
 
 
 export default ShoppingCart;
