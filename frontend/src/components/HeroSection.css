@@ -6,6 +6,9 @@
     align-items: center;
   }
 
+.hero-btns {
+  margin-top: 45vh;
+}
   h1 {
     font-size: 45px;
     color: #A2D7AA
