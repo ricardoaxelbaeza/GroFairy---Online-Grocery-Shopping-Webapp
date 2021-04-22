@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid } from '@material-ui/core'
 import Store from '../Store'
 import { useState, useEffect } from 'react'
+import SearchFeature from './SearchFeature'
 // import { MessageOutlined, LikeOutlined, StarOutlined } from '@ant-design/icons';
 // import { List, Avatar, Space } from 'antd';
 
@@ -19,6 +20,9 @@ import { useState, useEffect } from 'react'
 
 const GroceryStores = (props) => {
 
+
+  
+
   const [stores, setStores] = useState([])
 
   useEffect(() => {
@@ -32,14 +36,21 @@ const GroceryStores = (props) => {
   }, [])
   return (
     <>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', margin:'1rem auto' }}>
+      <SearchFeature
+        
+      />
+      </div>
+      
       <Grid container justify='center' spacing={3} style={{
-        backgroundColor: '#EE6590',
+        backgroundColor: '#EE6590', maxWidth: '99vw'
       }}>
         {stores.map((store) => (
           <Grid item key={store.id} xs={12} sm={6} md={4} lg={3}>
             <Store store={store} />
           </Grid>
         ))}
+        
       </Grid>
     </>
     // <List
@@ -82,6 +93,7 @@ const GroceryStores = (props) => {
     //     </List.Item>
     //   )}
     // />
+
   )
 }
 

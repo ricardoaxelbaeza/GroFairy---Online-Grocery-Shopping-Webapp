@@ -1,17 +1,14 @@
 
 
 .hero-container {
-    height: 100vh;
-    width: 100vw;
     display: flex;
     flex-direction: column;
-    justify-content: top;
-    background-size: cover;
     align-items: center;
-    color: white;
-
   }
 
+.hero-btns {
+  margin-top: 45vh;
+}
   h1 {
     font-size: 45px;
     color: #A2D7AA

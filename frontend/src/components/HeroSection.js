@@ -7,14 +7,11 @@ export default function HeroSection() {
   return (
 
     <div className='hero-container' style={{
-      backgroundImage: `url(${process.env.PUBLIC_URL + '/GroFairy3.jpeg'})` 
-
+      backgroundImage: `url(${process.env.PUBLIC_URL + '/GroFairy3.jpeg'})`, height: '89vh', maxHeight: '89vh', 
+      backgroundSize: 'cover', maxWidth: '100vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center',
     }}>
       {/* <img src={process.env.PUBLIC_URL + "/GroFairyLogo.jpeg"} width="1792" alt="GroFairy Logo" /> */}
       
-      <p></p><p></p><p></p><p></p><p></p><p></p><p></p>
-     
-      <p></p>
       <div className='hero-btns'>
         <Button
           className='btns'
