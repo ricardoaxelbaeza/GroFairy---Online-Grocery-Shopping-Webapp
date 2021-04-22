@@ -8,8 +8,7 @@ export default function HeroSection() {
 
     <div className='hero-container' style={{
       backgroundImage: `url(${process.env.PUBLIC_URL + '/GroFairy3.jpeg'})`, height: '89vh', maxHeight: '89vh', 
-      backgroundSize: 'cover', maxWidth: '100vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center',
-
+      backgroundSize: 'cover', maxWidth: '100vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center', overflow: 'hidden'
     }}>
       {/* <img src={process.env.PUBLIC_URL + "/GroFairyLogo.jpeg"} width="1792" alt="GroFairy Logo" /> */}
       
