@@ -1,6 +1,5 @@
 import React from 'react'
-import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } from '@material-ui/core'
-import { Done } from '@material-ui/icons'
+import { Card, CardMedia, CardContent, Typography } from '@material-ui/core'
 import makeStyles from './GroceryStyles'
 import { Link } from 'react-router-dom';
 import { Button } from './Button'

@@ -18,7 +18,7 @@ const GroceryStores = (props) => {
   }, [])
   return (
     <>
-      <div style={{ position: 'fixed', marginRight: '25vw', marginLeft: '25vw', marginTop: '10vh', width: '50vw' }}>
+      <div style={{ position: 'fixed', width: '50vw' }}>
         <SearchFeature
 
         />

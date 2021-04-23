@@ -1,8 +1,8 @@
 import '../../App.css'
-import HeroSection from '../HeroSection'
+// import HeroSection from '../HeroSection'
 import "./ShoppingCart.css";
 import CartItem from "./CartItem";
-import product from "../Product.js";
+// import Product from "../Product.js";
 
 
 const ShoppingCart = () => {
