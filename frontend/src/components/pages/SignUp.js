@@ -30,7 +30,6 @@ function SignUpConfirm() {
 const Login = (props) => {
     const useStyles = makeStyles((theme) => ({
         paper: {
-          marginTop: theme.spacing(8),
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
@@ -86,7 +85,6 @@ const Login = (props) => {
     
     return (
         <Container component="main" maxWidth="xs">
-          <CssBaseline />
           <div className={classes.paper}>
             <Avatar className={classes.avatar}>
               <img className='logo-img' src='wing.png' alt='logo' />
