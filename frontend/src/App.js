@@ -8,7 +8,7 @@ import GroceryStores from './components/pages/GroceryStores';
 import GroceryProducts from './components/pages/GroceryProducts';
 import SignUp from './components/pages/SignUp';
 import ShoppingCart from './components/pages/ShoppingCart';
-
+import SignIn from "./components/pages/SignIn"
 
 
 
@@ -23,6 +23,7 @@ function App() {
           <Route path='/signup' exact component={SignUp} />
           <Route path='/groceryproducts' exact component={GroceryProducts} />
           <Route path='/shoppingcart' exact component={ShoppingCart} />
+          <Route path='/signin' exact component={SignIn} />
         </Switch>
       </Router>
     </>
