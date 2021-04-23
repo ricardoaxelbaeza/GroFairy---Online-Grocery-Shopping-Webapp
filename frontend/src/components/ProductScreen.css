@@ -1,8 +1,0 @@
-button {
-    grid-column: 1/-1;
-    padding: 10px 16px;
-    background: black;
-    color: white;
-    border: 1px solid black;
-    cursor: pointer;
-}

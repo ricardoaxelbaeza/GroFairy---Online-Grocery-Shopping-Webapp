@@ -12,7 +12,7 @@ const GroceryProducts = (props) => {
         let parameters = new URLSearchParams(window.location.search);
         return parameters.get(parameterName);
     }
-    
+
 
     useEffect(() => {
         fetch('http://54.151.124.251:8000/groceryproducts/?id=' + id)
@@ -26,11 +26,11 @@ const GroceryProducts = (props) => {
     return (
         <>
             <Grid container justify='center' style={{
-                backgroundColor: '#EE6590',
+                backgroundColor: '#EE6590', marginTop: '11vh'
             }}>
                 {products.map((product) => (
-                    <Grid item key={product.id} xs={12} sm={6} md={4} lg={3} style={{border: '10px solid #EE6590'}}>
-                        <Product product={product} /> 
+                    <Grid item key={product.id} xs={12} sm={6} md={4} lg={3} style={{ border: '10px solid #EE6590' }}>
+                        <Product product={product} />
                     </Grid>
                 ))}
             </Grid>

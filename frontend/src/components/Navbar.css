@@ -3,6 +3,7 @@
   height: 11vh;
   font-size: 1.2rem;
   position: fixed;
+  margin-top: -11vh;
 }
 
 .navbar-container {

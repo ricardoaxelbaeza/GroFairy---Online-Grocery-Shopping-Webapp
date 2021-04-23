@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card, CardMedia, CardContent, CardActions, Typography } from '@material-ui/core'
 import makeStyles from './GroceryStyles'
-import "./ProductScreen.css";
+import "./Product.css";
 import { AddToCart } from './actions/CartActions';
 
 const product = ({ product }) => {

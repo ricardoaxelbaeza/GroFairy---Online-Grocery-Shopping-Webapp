@@ -18,20 +18,21 @@ const GroceryStores = (props) => {
   }, [])
   return (
     <>
-      <div style={{ position: 'fixed', marginRight: '25vw', marginLeft: '25vw', marginTop: '10vh', width: '50vw'}}>
-      <SearchFeature
-        
-      />
+      <div style={{ position: 'fixed', marginRight: '25vw', marginLeft: '25vw', marginTop: '10vh', width: '50vw' }}>
+        <SearchFeature
+
+        />
       </div>
-      
+
       <Grid container justify='center' style={{
-        backgroundColor: '#EE6590', maxWidth: '100vw'}}>
+        backgroundColor: '#EE6590', maxWidth: '100vw', marginTop: '11vh'
+      }}>
         {stores.map((store) => (
-          <Grid item key={store.id} xs={12} sm={6} md={4} lg={3} style={{border: '10px solid #EE6590'}}>
+          <Grid item key={store.id} xs={12} sm={6} md={4} lg={3} style={{ border: '10px solid #EE6590' }}>
             <Store store={store} />
           </Grid>
         ))}
-        
+
       </Grid>
     </>
   )
