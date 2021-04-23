@@ -3,12 +3,12 @@ import { Card, CardMedia, CardContent, CardActions, Typography } from '@material
 import makeStyles from './GroceryStyles'
 import "./Product.css";
 
-const product = ({ product }) => {
+const Product = ({ product }) => {
     const classes = makeStyles();
     return (
         <div>
             <Card className={classes.root}>
-                <CardMedia className={classes.media} image={product.product_image} title={product.product_name} />
+                <CardMedia className={classes.media} image={product.product_image} title={product.product_id} />
                 <CardContent>
                     <div className={classes.cardContent}>
                         <Typography variant='h5' gutterBottom>
@@ -33,7 +33,7 @@ const product = ({ product }) => {
                                 <option value = "4">4</option>
                             </select>
                         </div>
-                        <button>Add To Cart</button>
+                        
                     </Typography>
                     {/*  */}
                 </CardContent>
@@ -44,7 +44,7 @@ const product = ({ product }) => {
     )
 }
 
-export default product
+export default Product
 /*
 <select value = {qty} onChange{(e) => setQty(e.target.value)}> this is gonna be used to get how many of the product they want to buy
     {[...Array(product.stock).keys()].map((x) => {
