@@ -83,14 +83,19 @@ const Login = (props) => {
       .then(response => console.log(response));
   }
 
+  const [click, setClick] = useState(false);
+  const closeMobileMenu = () => setClick(false);
+
   return (
+    
+
     <Container component="main" maxWidth="xs" style={{ marginTop: '11vh' }}>
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>
           <img className='logo-img' src='wing.png' alt='logo' />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Sign Up
             </Typography>
         <form className={classes.form} noValidate onSubmit={handleSubmit}>
           <TextField
@@ -195,18 +200,21 @@ const Login = (props) => {
             color="primary"
             className={classes.submit}
           >
-            Sign In
+            Sign Up
               </Button>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
-                Forgot password?
+                {/* Forgot password? */}
                   </Link>
             </Grid>
             <Grid item>
-              <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
+              
+              <Link id="sigInButton" href="#" variant="body2" onclick={'/signin' }>
+                {"Already have an account? Sign In"}
               </Link>
+
+
             </Grid>
           </Grid>
         </form>
