@@ -2,6 +2,7 @@ import React from 'react';
 import { Grid } from '@material-ui/core'
 import Product from '../Product'
 import { useState, useEffect } from 'react'
+import SearchBar from '../SearchBar'
 
 const GroceryProducts = (props) => {
 
@@ -12,7 +13,6 @@ const GroceryProducts = (props) => {
         let parameters = new URLSearchParams(window.location.search);
         return parameters.get(parameterName);
     }
-
 
     useEffect(() => {
         fetch('http://54.151.124.251:8000/groceryproducts/?id=' + id)
@@ -25,6 +25,8 @@ const GroceryProducts = (props) => {
     })
     return (
         <>
+            <SearchBar placeholder='Enter product name:' handleChange={( e ) => console.log(e)} />
+
             <Grid container justify='center' style={{
                 backgroundColor: '#EE6590', marginTop: '11vh'
             }}>

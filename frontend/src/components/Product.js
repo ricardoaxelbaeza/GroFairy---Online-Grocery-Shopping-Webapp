@@ -8,7 +8,7 @@ const product = ({ product }) => {
     return (
         <div>
             <Card className={classes.root}>
-                <CardMedia className={classes.media} image={product.product_image} title={product.product_id} />
+                <CardMedia className={classes.media} image={product.product_image} title={product.product_name} />
                 <CardContent>
                     <div className={classes.cardContent}>
                         <Typography variant='h5' gutterBottom>
