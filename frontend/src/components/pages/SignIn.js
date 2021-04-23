@@ -93,30 +93,17 @@ const Login = (props) => {
           Sign In
             </Typography>
         <form className={classes.form} noValidate onSubmit={handleSubmit}>
-          <TextField
+        <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
-            id="first_name"
-            label="First Name"
-            name="first_name"
-            value={first_name}
-            onInput={e => setFirstName(e.target.value)}
-            autoComplete="first_name"
-            autoFocus
-          />
-          <TextField
-            variant="outlined"
-            margin="normal"
-            required
-            fullWidth
-            id="last_name"
-            label="Last Name"
-            name="last_name"
-            value={last_name}
-            onInput={e => setLastName(e.target.value)}
-            autoComplete="last_name"
+            id="email"
+            label="Email Address"
+            name="email"
+            value={email}
+            onInput={e => setEmail(e.target.value)}
+            autoComplete="email"
             autoFocus
           />
 
