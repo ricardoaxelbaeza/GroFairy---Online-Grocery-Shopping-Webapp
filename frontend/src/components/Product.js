@@ -18,15 +18,14 @@ const product = ({ product }) => {
                         <Typography variant='h5'>
                             ${product.unit_price}
                         </Typography>
-                        <Typography variant='h5' color ="textSecondary">{product.description}</Typography>
-                    </div><Typography variant='body2' color='textSecondary'>
-                        <p>
+                    </div>
+                    <Typography variant='body2' color='textSecondary' style={{fontSize: 'large'}}>
                             Status: {" "}
                             <span>
                                 {product.stock > 0 ? "In stock" : "Out of stock"}
                             </span>
-                        </p>
-                        <p>
+                        <p/>
+                        <div style={{fontSize: 'large'}}>
                             Qty
                             <select>
                                 <option value = "1">1</option>
@@ -34,9 +33,8 @@ const product = ({ product }) => {
                                 <option value = "3">3</option>
                                 <option value = "4">4</option>
                             </select>
-                        
+                        </div>
                         <button>Add To Cart</button>
-                        </p>
                     </Typography>
                     {/*  */}
                 </CardContent>

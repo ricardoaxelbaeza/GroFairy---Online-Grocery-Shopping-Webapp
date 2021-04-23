@@ -25,12 +25,11 @@ const GroceryProducts = (props) => {
     }, [])
     return (
         <>
-            <Grid container justify='center' spacing={3} style={{
+            <Grid container justify='center' style={{
                 backgroundColor: '#EE6590',
             }}>
                 {products.map((product) => (
-                    <Grid item key={product.id} xs={12} sm={6} md={3} lg={4}>
-                       
+                    <Grid item key={product.id} xs={12} sm={6} md={4} lg={3} style={{border: '10px solid #EE6590'}}>
                         <Product product={product} /> 
                     </Grid>
                 ))}
