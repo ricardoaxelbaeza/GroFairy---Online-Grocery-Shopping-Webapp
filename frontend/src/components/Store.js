@@ -3,6 +3,7 @@ import { Card, CardMedia, CardContent, CardActions, Typography, IconButton } fro
 import { Done } from '@material-ui/icons'
 import makeStyles from './GroceryStyles'
 import { Link } from 'react-router-dom';
+import { Button } from './Button'
 
 
 const store = ({ store }) => {
@@ -20,21 +21,19 @@ const store = ({ store }) => {
                         <Typography variant='h5'>
                             {store.store_address}
                         </Typography>
-                    </div><Typography variant='body2' color='textSecondary'>
-                        {store.description}
-                    </Typography>
+                    </div>
+                        <Typography variant='body2' color='textSecondary'>
+                            {store.description}
+                        </Typography>
                     {/*  */}
-                </CardContent>
-                <CardActions disableSpacing ClassName={classes.cardActions}>
-                    <IconButton aria-label='View store'>
-                        <Link to={str} className={classes.navLinks} style={{
-                            color: 'black',
-                        }}>
+                    <div style={{textAlign: 'center'}}>
+                    <Button className='btns' buttonSize='btn--large' style={{margin: 'auto'}}>
+                        <Link to={str} className={classes.navLinks} >
                             View Store Page
-                    </Link>
-                        <Done />
-                    </IconButton>
-                </CardActions>
+                        </Link>
+                    </Button>
+                    </div>
+                </CardContent>
             </Card>
         </div>
     )

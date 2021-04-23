@@ -3,7 +3,8 @@ import { makeStyles } from '@material-ui/core/styles'
 export default makeStyles(() => ({
     root: {
         maxWidth: '100%',
-        height: '85vh',
+        maxHeight: '85vh',
+        height: 'auto'
     },
     media: {
         height: '20vh',
@@ -16,5 +17,8 @@ export default makeStyles(() => ({
     cardContent: {
         justifyContent: 'space-between',
         marginBottom: '1vh'
+    },
+    navLinks: {
+        color: 'black',
     },
 }));
