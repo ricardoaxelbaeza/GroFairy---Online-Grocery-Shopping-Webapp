@@ -5,6 +5,8 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import { Route } from "react-router";
+import { BrowserRouter as Router, Link as RouterLink } from "react-router-dom";
 import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
@@ -12,6 +14,9 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+
+
+
 // import axios from 'axios';
 
 function SignUpConfirm() {
@@ -209,12 +214,11 @@ const Login = (props) => {
                   </Link>
             </Grid>
             <Grid item>
-              
-              <Link id="sigInButton" href="#" variant="body2" onclick={'/signin' }>
+              {/* linked to signin use component*/}
+              <Link component={RouterLink} to= "/signin" id="sigInButton" href="#" variant="body2">
                 {"Already have an account? Sign In"}
               </Link>
-
-
+                     
             </Grid>
           </Grid>
         </form>
