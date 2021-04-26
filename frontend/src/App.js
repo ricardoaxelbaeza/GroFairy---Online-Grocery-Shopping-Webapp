@@ -9,6 +9,7 @@ import GroceryProducts from './components/pages/GroceryProducts';
 import SignUp from './components/pages/SignUp';
 import ShoppingCart from './components/pages/ShoppingCart';
 import SignIn from "./components/pages/SignIn"
+import Checkout from "./components/pages/Checkout"
 
 
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/groceryproducts' exact component={GroceryProducts} />
           <Route path='/shoppingcart' exact component={ShoppingCart} />
           <Route path='/signin' exact component={SignIn} />
+          <Route path='/checkout' exact component={Checkout} />
         </Switch>
       </Router>
     </>
