@@ -17,8 +17,8 @@ const Checkout = () => {
         </div>
     )
 
-    const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1)
-    const lastStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1)
+    const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    const lastStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
 
     const next = (data) => {
         setShippingData(data);
@@ -27,7 +27,7 @@ const Checkout = () => {
 
     const Form = () => activeStep === 0
         ? <AddressForm next={next}/>
-        : <PaymentForm />
+        : <PaymentForm lastStep={lastStep}/>
     
     return (
         <>
