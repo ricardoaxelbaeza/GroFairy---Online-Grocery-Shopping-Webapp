@@ -2,12 +2,13 @@ import '../../App.css'
 // import HeroSection from '../HeroSection'
 import "./ShoppingCart.css";
 import CartItem from "./CartItem";
+import { Link } from 'react-router-dom'
 // import Product from "../Product.js";
 
 
 const ShoppingCart = () => {
     return (
-        <div className="shoppingcart" style={{marginTop: '11vh'}}>
+        <div className="shoppingcart" style={{ marginTop: '11vh' }}>
             <div className="shoppingcart_left">
                 <h2>Shopping cart</h2>
 
@@ -19,7 +20,11 @@ const ShoppingCart = () => {
                     <p>$ </p>
                 </div>
                 <div>
-                    <button>Proceed to Checkout</button>
+                    <button>
+                        <Link to='/checkout' style={{color: 'white'}}>
+                            Proceed To Checkout
+                        </Link>
+                    </button>
                 </div>
             </div>
         </div>

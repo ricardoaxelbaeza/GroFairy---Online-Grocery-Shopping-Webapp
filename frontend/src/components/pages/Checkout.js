@@ -7,8 +7,9 @@ import PaymentForm from '../PaymentForm'
 const steps = ['Home Address', 'Payment Details']
 
 const Checkout = () => {
-    const [activeStep, setActiveStep] = useState(1);
+    const [activeStep, setActiveStep] = useState(0);
     const classes = useStyles();
+    const [shippingData, setShippingData] = useState({});
 
     const Confirmation = () => (
         <div>
@@ -16,8 +17,16 @@ const Checkout = () => {
         </div>
     )
 
+    const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1)
+    const lastStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1)
+
+    const next = (data) => {
+        setShippingData(data);
+        nextStep();
+    }
+
     const Form = () => activeStep === 0
-        ? <AddressForm />
+        ? <AddressForm next={next}/>
         : <PaymentForm />
     
     return (
