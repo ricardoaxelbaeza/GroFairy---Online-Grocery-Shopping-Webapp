@@ -3,9 +3,11 @@ import { InputLabel, Select, MenuItem, Button, Grid, Typography } from '@materia
 import { useForm, FormProvider } from 'react-hook-form'
 import FormIn from './FormIn'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 const AddressForm = ({ next }) => {
     const methods = useForm();
+    const [startDate, setStartDate] = useState(new Date());
 
     return (
         <>
@@ -16,7 +18,6 @@ const AddressForm = ({ next }) => {
                         <FormIn required name='firstName' label='First Name'/>
                         <FormIn required name='lastName' label='Last Name'/>
                         <FormIn required name='shippingAddress' label='Shipping Address'/>
-                        <FormIn required name='city' label='City'/>
                         <FormIn required name='zipOrPostalCode' label='Zip/Postal Code'/>
                     </Grid>
                     <br />

@@ -6,7 +6,7 @@ import Review from './Review'
 
 const stripePromise = loadStripe('...');
 
-const PaymentForm = ({ lastStep }) => {
+const PaymentForm = ({ lastStep, nextStep }) => {
     return (
         <>
             <Review/>
@@ -20,8 +20,8 @@ const PaymentForm = ({ lastStep }) => {
                             <br/>
                             <br/>
                             <div style={{display: 'flex', justifyContent: 'space-between'}}>
-                                <Button variant='outlined'> Back</Button>
-                                <Button type='submit' variant='contained' onClick={lastStep} disabled={!stripe} color='primary'>
+                                <Button variant='outlined' onClick={lastStep}> Back</Button>
+                                <Button type='submit' variant='contained' onClick={nextStep} disabled={!stripe} color='primary'>
                                     Pay $50
                                 </Button>
                             </div>
