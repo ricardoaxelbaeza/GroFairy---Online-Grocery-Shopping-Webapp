@@ -3,6 +3,7 @@ import { Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider,
 import useStyles from '../CheckoutStyles'
 import AddressForm from '../AddressForm'
 import PaymentForm from '../PaymentForm'
+import { Link } from 'react-router-dom'
 
 const steps = ['Home Address', 'Payment Details']
 
@@ -12,8 +13,12 @@ const Checkout = () => {
     const [shippingData, setShippingData] = useState({});
 
     const Confirmation = () => (
-        <div>
-            Confirmation
+        <div style={{textAlign: 'center'}}>
+            Thank you, please wait up to 20 minutes for your order to be delivered!
+            <Divider/>
+            <br />
+            <br />
+            <Button component={Link} to='/' variant="contained" color='primary'>Back To Homepage</Button>
         </div>
     )
 
@@ -27,7 +32,7 @@ const Checkout = () => {
 
     const Form = () => activeStep === 0
         ? <AddressForm next={next}/>
-        : <PaymentForm lastStep={lastStep}/>
+        : <PaymentForm lastStep={lastStep} nextStep = {nextStep}/>
     
     return (
         <>

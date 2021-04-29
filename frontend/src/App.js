@@ -11,6 +11,7 @@ import ShoppingCart from './components/pages/ShoppingCart';
 import SignIn from "./components/pages/SignIn"
 import { connect } from 'react-redux'
 import * as actions from './components/pages/actions/auth'
+import Checkout from './components/pages/Checkout'
 
 
 
@@ -32,6 +33,7 @@ class App extends Component {
             <Route path='/groceryproducts' exact component={GroceryProducts} />
             <Route path='/shoppingcart' exact component={ShoppingCart} />
             <Route path='/signin' exact component={SignIn} />
+            <Route path='/checkout' exact component={Checkout} />
           </Switch>
         </Router>
       </>
