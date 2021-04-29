@@ -21,7 +21,7 @@ const PaymentForm = ({ lastStep, nextStep }) => {
                             <br/>
                             <div style={{display: 'flex', justifyContent: 'space-between'}}>
                                 <Button variant='outlined' onClick={lastStep}> Back</Button>
-                                <Button type='submit' variant='contained' onClick={nextStep} disabled={!stripe} color='primary'>
+                                <Button variant='contained' onClick={nextStep} disabled={!stripe} color='primary'>
                                     Pay $50
                                 </Button>
                             </div>

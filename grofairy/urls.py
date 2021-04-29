@@ -31,6 +31,8 @@ urlpatterns = [
     path('user/', UserView.as_view(), name="something"),
     path('grocerystores/', GroceryStoreView.as_view(), name="something"),
     path('groceryproducts/', GroceryStoreStockView.as_view(), name="something2"),
+    path('rest-auth/', include('rest_auth.urls')),
+    path('rest-auth/registration/', include('rest_auth.registration.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()

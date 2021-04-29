@@ -39,10 +39,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
+    'rest_auth',
     'grofairy',
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -143,3 +151,8 @@ STATICFILES_DIRS = [
 # The number for 54 is the elastic ip I used for the apache server and 127 is for when you want to run this locally.
 ALLOWED_HOSTS=['EC2_DNS_NAME', '54.151.124.251', '127.0.0.1', 'localhost', '*']
 CORS_ORIGIN_WHITELIST = ['http://localhost:1977']
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_LOGIN_ATTEMPTS_LIMIT = None
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+
