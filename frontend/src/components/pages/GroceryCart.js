@@ -3,6 +3,11 @@ import { Grid } from '@material-ui/core'
 import Product from '../Product'
 import GroceryProducts from './GroceryProducts'
 
+
+
+
+
+
 export default class GroceryCart extends Component {
     total() {
         return this.props.items.reduce((total, item) => {

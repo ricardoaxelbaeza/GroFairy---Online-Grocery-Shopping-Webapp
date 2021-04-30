@@ -10,4 +10,5 @@ urlpatterns = [
     # dbdump view. go to localhost:8000/dbdump.
     path('dbdump/', views.dbdump, name='page-dbdump'),
     path('grocerystoreslist/', views.grocerystores, name='page-grocerystores')
+    
 ]

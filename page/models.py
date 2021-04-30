@@ -86,6 +86,8 @@ class Order(models.Model):
     order_success = models.BooleanField()
     note = models.CharField(max_length=45)
 
+    def get_cart_total(self):
+        return sum([Order_Item.product.unit_price])
     class Meta:
         db_table = "orders"
         unique_together = (('order_id', 'user_id', 'driver_id'))

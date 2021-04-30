@@ -1,7 +1,13 @@
 import React from 'react'
-import { Card, CardMedia, CardContent, CardActions, Typography } from '@material-ui/core'
+import { Card, CardMedia, CardContent, CardActions, Typography, Button } from '@material-ui/core'
 import makeStyles from './GroceryStyles'
 import "./Product.css";
+
+
+const addToCartHandler = () =>{
+    console.log('Add To Cart: ', )
+}
+
 
 const Product = ({ product }) => {
     const classes = makeStyles();
@@ -24,7 +30,11 @@ const Product = ({ product }) => {
                                 {product.stock > 0 ? "In stock" : "Out of stock"}
                             </span>
                         <p/>
-                        <div style={{fontSize: 'large'}}>
+
+
+
+                        {product.stock > 0 && (
+                            <div style={{fontSize: 'large'}}>
                             Qty
                             <select>
                                 <option value = "1">1</option>
@@ -33,8 +43,20 @@ const Product = ({ product }) => {
                                 <option value = "4">4</option>
                             </select>
                         </div>
-                        
+                    
+
+                        )}
+                        <Button
+                            onClick ={addToCartHandler}
+                            className= 'btn-block'
+                            disabled={product.stock == 0}
+                            type = 'button'
+                        >
+                            Add To Cart
+                        </Button>
+                   
                     </Typography>
+                    
                     {/*  */}
                 </CardContent>
                 <CardActions disableSpacing ClassName={classes.cardActions}>
