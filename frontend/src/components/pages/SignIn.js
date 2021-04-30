@@ -5,8 +5,11 @@ import { connect } from 'react-redux'
 import * as actions from './actions/auth'
 import { LoadingOutlined } from '@ant-design/icons';
 import { NavLink } from 'react-router-dom';
+import './SignIn.css';
+import Navbar from '../Navbar';
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
+
 
 const NormalLoginForm = (props) => {
   const onFinish = (values) => {
@@ -23,7 +26,7 @@ const NormalLoginForm = (props) => {
   }
 
   return (
-    <div>
+    <div className='form-body' style={{ marginTop: '11vh' }}>
       {errorMessage}
       {
         props.loading ?
@@ -81,6 +84,8 @@ const NormalLoginForm = (props) => {
     </div>
   );
 };
+
+
 
 const mapStateToProps = (state) => {
   return {

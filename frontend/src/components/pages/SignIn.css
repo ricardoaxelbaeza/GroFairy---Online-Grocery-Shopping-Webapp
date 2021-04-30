@@ -1,0 +1,12 @@
+.login-form {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    background: #A2D7AA;
+    text-align: center;
+    max-width: 100%;
+}
+.login-form-button {
+    text-align: center;
+    width: 10%;
+}
