@@ -5,6 +5,8 @@ import { compose, createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
 import reducer from './components/pages/reducers/auth';
+import './index.css';
+
 
 const composeEnchances = window.__REDUX_DEVTOOLS_EXTENSIONS_COMPOSE__ || compose
 
