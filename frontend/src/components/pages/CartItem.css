@@ -4,7 +4,7 @@
     margin-bottom: 8px;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr 1fr 1fr;
-    gap: 8px;
+    gap: 4px;
     background: white;
     border-radius: 2px;
     place-items: center;
@@ -39,14 +39,14 @@
     transform: scale(1.2);
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     .cartitem_name {
-        font-size: 0.8rem;
+        font-size: 0.1rem;
     }
 
     .cartitem_select,
     .cartitem_deleteButton {
-        padding: 8px 13px;
+        padding: 6px 10px;
     }
 
     .cartitem_price {
@@ -61,10 +61,20 @@
 
     .cartitem_select,
     .cartitem_deleteButton {
-        padding: 5px 8px;
+        padding: 4px 7px;
     }
 
     .cartitem_price {
         font-size: 0.6rem;
     }
+}
+.cartitem_image {
+    width: 200px;
+    height: 120px;
+}
+
+/* Resize images */
+.cartitem_image img {
+    width: 100%;
+    height: auto;
 }

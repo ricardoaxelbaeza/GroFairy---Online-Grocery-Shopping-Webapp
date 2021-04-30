@@ -16,8 +16,8 @@ const ShoppingCart = () => {
             </div>
             <div className="shoppingcart_right">
                 <div className="shoppingcart_info">
-                    <p>Subtotal (0) items</p>
-                    <p>$ </p>
+                    <p>Subtotal (4) items</p>
+                    <p>$27.18</p>
                 </div>
                 <div>
                     <button>
