@@ -2,7 +2,7 @@
   background: #80b382;
   height: 11vh;
   font-size: 1.2rem;
-  position: absolute;
+  position: fixed;
   margin-top: -11vh;
 }
 

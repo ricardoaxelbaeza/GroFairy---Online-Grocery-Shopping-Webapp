@@ -3,9 +3,8 @@ import React from 'react'
 const SearchBar = (props) =>{
     return(
         <input type = 'search'
-        className='search'
         placeholder={props.placeholder}
-        onChange={props.handleChange}
+        onChange={props.onChange}
         style={{position: 'fixed', marginTop: 'auto', width: '100vw', height: '4vh'}}
         />
     )
