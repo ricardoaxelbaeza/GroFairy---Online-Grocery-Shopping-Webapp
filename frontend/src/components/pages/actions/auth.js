@@ -53,16 +53,19 @@ export const authLogin = (username, password) => {
         mode: 'cors',
         body: JSON.stringify(data)
         };
-        fetch('http://127.0.0.1:8000/rest-auth/login/', requestOptions)
+        fetch('http://54.151.124.251:8000/rest-auth/login/', requestOptions)
         .then(response => response.json())
         .then(data => {
             const token = data.key;
             const expirationDate = new Date(new Date().getTime() + 3600 * 1000)
-            localStorage.setItem('token', token);
-            localStorage.setItem('expirationDate', expirationDate);
-            localStorage.setItem('username', username)
-            dispatch(authSuccess(token));
-            dispatch(checkAuthTimeout(3600));
+            if(token = 'undefined') {
+            } else {
+                localStorage.setItem('token', token);
+                localStorage.setItem('expirationDate', expirationDate);
+                localStorage.setItem('username', username)
+                dispatch(authSuccess(token));
+                dispatch(checkAuthTimeout(3600));
+            }
         })
         .catch(err => {
             console.error('Error:', err)
@@ -85,7 +88,7 @@ export const authSignup = (username, email, password1, password2) => {
             mode: 'cors',
             body: JSON.stringify(data)
         };
-        fetch('http://127.0.0.1:8000/rest-auth/registration/', requestOptions)
+        fetch('http://54.151.124.251:8000/rest-auth/registration/', requestOptions)
         .then(response => response.json())
         .then(data => {
             const token = data.key;
