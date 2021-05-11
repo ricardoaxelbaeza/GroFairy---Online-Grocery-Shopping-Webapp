@@ -173,7 +173,7 @@ class User_Preferred_Tag(models.Model):
 
 class Shopping_Cart(models.Model):
     cart_id = models.IntegerField(primary_key=True)
-    item = models.CharField(max_length=45, primary_key=True)
+    item = models.CharField(max_length=45)
     price = models.DecimalField(max_digits=65, decimal_places=2)
     quantity = models.IntegerField()
 

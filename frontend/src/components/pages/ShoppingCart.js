@@ -3,10 +3,22 @@ import '../../App.css'
 import "./ShoppingCart.css";
 import CartItem from "./CartItem";
 import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 // import Product from "../Product.js";
 
 
 const ShoppingCart = () => {
+    const [cart, setCart] = useState([]);
+  
+    useEffect(() => {
+      fetch('http://54.151.124.251:8000/shoppingcart/?format=json')
+        .then(resp => resp.json())
+        .then(resp => {
+          console.log(resp)
+          setCart(resp)
+        })
+  
+    }, [])
     return (
         <div className="shoppingcart" style={{ marginTop: '11vh' }}>
             <div className="shoppingcart_left">

@@ -110,4 +110,18 @@ class GroceryStoreStockView(APIView):
             return Response(serializer.data)
 
 
-            
+class ShoppingCartView(APIView):
+    serializer_class = ShoppingCartSerializer
+
+    def get(self, request, *args, **kwargs):
+        id = 1
+        detail = [{'cart_id': detail.cart_id, 'item': detail.item, 'price': detail.price, 'quantity': detail.quantity
+                    } for detail in Shopping_Cart.objects.filter(pk=id)]
+        
+        return Response(detail)
+    
+    def post(self, request):
+        serializer = Shopping_Cart(data=request.data)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+            return Response(serializer.data)

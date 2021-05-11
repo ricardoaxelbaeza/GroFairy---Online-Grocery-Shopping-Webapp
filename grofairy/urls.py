@@ -28,9 +28,10 @@ urlpatterns = [
     # map page urls to site. value on left can be renamed to anything you wish to be at the beginning of the url
     # e.g. 'page/' to allow for localhost:8000/page/ and /page/about
     path('', include('page.urls')),
-    path('user/', UserView.as_view(), name="something"),
-    path('grocerystores/', GroceryStoreView.as_view(), name="something"),
-    path('groceryproducts/', GroceryStoreStockView.as_view(), name="something2"),
+    path('user/', UserView.as_view()),
+    path('grocerystores/', GroceryStoreView.as_view()),
+    path('groceryproducts/', GroceryStoreStockView.as_view()),
+    path('shoppingcart/', ShoppingCartView.as_view()),
     path('rest-auth/', include('rest_auth.urls')),
     path('rest-auth/registration/', include('rest_auth.registration.urls'))
 ]
