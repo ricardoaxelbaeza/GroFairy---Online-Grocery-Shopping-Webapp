@@ -1,7 +1,7 @@
 import '../../App.css'
 // import HeroSection from '../HeroSection'
 import "./ShoppingCart.css";
-import CartItem from "./CartItem";
+// import CartItem from "./CartItem";
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { Grid, Typography } from '@material-ui/core'
@@ -25,7 +25,7 @@ const ShoppingCart = () => {
             <div className="shoppingcart_left">
                 <h2>Shopping cart</h2>
 
-                <CartItem />
+                {/* <CartItem /> */}
             </div>
             <div className="shoppingcart_right">
                 <div className="shoppingcart_info">
