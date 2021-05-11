@@ -170,3 +170,13 @@ class User_Preferred_Tag(models.Model):
 
     def __str__(self):
         return "User id " + str(self.user) + ": " + str(self.grocery_tag_id)
+
+class Shopping_Cart(models.Model):
+    cart_id = models.IntegerField(primary_key=True)
+    item = models.CharField(max_length=45, primary_key=True)
+    price = models.DecimalField(max_digits=65, decimal_places=2)
+    quantity = models.IntegerField()
+
+    class Meta:
+        db_table = "shopping_cart"
+        unique_together = (('cart_id', 'item'))

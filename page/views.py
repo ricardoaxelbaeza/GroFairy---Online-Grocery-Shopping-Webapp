@@ -14,6 +14,7 @@ from .models import Order_Item
 from .models import Grocery_Store_Stock
 from .models import User_Preferred_Store
 from .models import User_Preferred_Tag
+from .models import Shopping_Cart
 import random
 
 

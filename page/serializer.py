@@ -28,3 +28,8 @@ class GroceryProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Grocery_Product
         fields = ['product_id', 'product_name', 'product_image']
+
+class ShoppingCartSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Shopping_Cart
+        fields = ['cart_id', 'item', 'price', 'quantity']
