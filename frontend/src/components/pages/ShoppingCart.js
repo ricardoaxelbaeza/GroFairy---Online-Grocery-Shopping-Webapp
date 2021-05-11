@@ -4,6 +4,7 @@ import "./ShoppingCart.css";
 import CartItem from "./CartItem";
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import { Grid, Typography } from '@material-ui/core'
 // import Product from "../Product.js";
 
 
@@ -39,7 +40,17 @@ const ShoppingCart = () => {
                     </button>
                 </div>
             </div>
+            <div>
         </div>
+        {cart.map((cartitems) => (
+                    <Grid item key={cartitems.cart_id} xs={12} sm={6} md={4} lg={3} style={{ border: '10px solid #EE6590' }}>
+                        <Typography variant='body2' color='textSecondary'>
+                            {cartitems.item}
+                        </Typography>
+                    </Grid>
+                ))}
+        </div>
+        // This whole cart.map here
     );
 };
 
