@@ -45,7 +45,11 @@ const ShoppingCart = () => {
         {cart.map((cartitems) => (
                     <Grid item key={cartitems.cart_id} xs={12} sm={6} md={4} lg={3} style={{ border: '10px solid #EE6590' }}>
                         <Typography variant='body2' color='textSecondary'>
-                            {cartitems.item}
+                            Item: {cartitems.item}
+                            <p/>
+                            Price: {cartitems.price}
+                            <p/>
+                            Quantity: {cartitems.quantity}
                         </Typography>
                     </Grid>
                 ))}
