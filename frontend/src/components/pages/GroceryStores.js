@@ -25,7 +25,7 @@ const GroceryStores = (props) => {
           backgroundColor: '#EE6590', maxWidth: '100vw', marginTop: '11vh'
         }}>
           {stores.filter((val) => {
-            if (searchText == "") {
+            if (searchText === "") {
               return val
             }
             else if (val.store_name.toLowerCase().includes(searchText.toLowerCase())){

@@ -3,6 +3,7 @@ import '../App.css'
 import { Button } from './Button'
 import './HeroSection.css'
 
+document.title = "GroFairy"
 export default function HeroSection() {
   return (
 

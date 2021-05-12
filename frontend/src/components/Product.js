@@ -24,7 +24,6 @@ const Product = ({ product }) => {
                                 {product.stock > 0 ? "In stock" : "Out of stock"}
                             </span>
                         <p/>
-                        {/* <button onClick={()=>this.product.addToCart(product)}> <-Doesnt work */}
                         <button>
                                  Add To Cart
                         </button>
@@ -51,10 +50,3 @@ const Product = ({ product }) => {
 }
 
 export default Product
-/*
-<select value = {qty} onChange{(e) => setQty(e.target.value)}> this is gonna be used to get how many of the product they want to buy
-    {[...Array(product.stock).keys()].map((x) => {
-        <option> key={x+1} value={x+1}>{x+1}</option>
-    })}
-</select>
-*/
