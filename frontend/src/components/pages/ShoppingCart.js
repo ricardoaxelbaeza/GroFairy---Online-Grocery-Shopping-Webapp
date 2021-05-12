@@ -27,7 +27,7 @@ const ShoppingCart = () => {
 
                 {/* <CartItem /> */}
             </div>
-            <div className="shoppingcart_right">
+            {/* <div className="shoppingcart_right">
                 <div className="shoppingcart_info">
                     <p>Subtotal (4) items</p>
                     <p>$27.18</p>
@@ -38,8 +38,8 @@ const ShoppingCart = () => {
                             Proceed To Checkout
                         </Link>
                     </button>
-                </div>
-            </div>
+                </div> */}
+            {/* </div> */}
             <div>
         </div>
         {cart.map((cartitems) => (
