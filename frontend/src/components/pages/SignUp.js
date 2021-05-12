@@ -1,8 +1,10 @@
 import React from 'react';
 import { Form, Input, Select, Button } from 'antd';
+import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux'
 import * as actions from './actions/auth'
+import "./SignUp.css"
 
 const formItemLayout = {
   labelCol: {
@@ -47,22 +49,22 @@ const RegistrationForm = (props) => {
   return (
     <div className='form-body' style={{ marginTop: '11vh' }}>
       <Form
-        {...formItemLayout}
-        form={form}
+        className="signup-form"
         name="register"
         onFinish={onFinish}
         scrollToFirstError
       >
+        <h1>Sign Up</h1>
+        
         <Form.Item
           name="Username"
-          label="Username"
           rules={[{ required: true, message: 'Please input your username!', whitespace: true }]}
           >
-          <Input />
-        </Form.Item>   
+          <Input className="signup-username" placeholder="Username" />
+        </Form.Item>  
+         
         <Form.Item
           name="email"
-          label="E-mail"
           rules={[
             {
               type: 'email',
@@ -74,12 +76,11 @@ const RegistrationForm = (props) => {
             },
           ]}
         >
-          <Input />
+          <Input className="signup-email"  placeholder="E-mail" />
         </Form.Item>
 
         <Form.Item
           name="password"
-          label="Password"
           rules={[
             {
               required: true,
@@ -88,12 +89,13 @@ const RegistrationForm = (props) => {
           ]}
           hasFeedback
         >
-          <Input.Password />
+          <Input.Password placeholder="Password"
+              prefix={<LockOutlined className="site-form-item-icon" />}
+            />
         </Form.Item>
 
         <Form.Item
           name="confirm"
-          label="Confirm Password"
           dependencies={['password']}
           hasFeedback
           rules={[
@@ -112,11 +114,13 @@ const RegistrationForm = (props) => {
             }),
           ]}
         >
-          <Input.Password />
+          <Input.Password placeholder="Confirm Password"
+              prefix={<LockOutlined className="site-form-item-icon" />}
+            />
         </Form.Item>
 
         <Form.Item {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit">
+          <Button className="signup-form-button" type="primary" htmlType="submit">
             Sign Up
           </Button>
           Or 

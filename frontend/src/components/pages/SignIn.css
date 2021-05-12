@@ -1,12 +1,36 @@
-.login-form {
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-    background: #A2D7AA;
-    text-align: center;
-    max-width: 100%;
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(bg.jpg) no-repeat;
+    background-size: cover;
 }
+.login-form {
+    width: 280px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    max-width: 100%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
 .login-form-button {
     text-align: center;
-    width: 10%;
+    width: 100%;
+}
+
+.login-from h1 {
+    float: left;
+    font-size: 40px;
+    border-bottom:6px solid #4caf40;
+    margin-bottom: 50px;
+    padding: 13px 0;
+}
+
+.ant-row ant-form-item {
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
 }

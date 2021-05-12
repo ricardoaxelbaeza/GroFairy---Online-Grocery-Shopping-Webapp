@@ -15,11 +15,21 @@ export default function HeroSection() {
 
         <div className='hero-btns'>
           <Button
+            url='/signup'
             className='btns'
             buttonStyle='btn--outline'
             buttonSize='btn--large'
           >
             GET STARTED
+          </Button>
+          <Button
+            url='/signin'
+            style="margin-left:  30"
+            className='btns'
+            buttonStyle='btn--outline'
+            buttonSize='btn--large'
+          >
+            LOGIN
           </Button>
         </div>
       </div>

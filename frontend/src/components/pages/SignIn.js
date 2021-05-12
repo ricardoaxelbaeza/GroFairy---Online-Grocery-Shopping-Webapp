@@ -6,7 +6,6 @@ import * as actions from './actions/auth'
 import { LoadingOutlined } from '@ant-design/icons';
 import { NavLink } from 'react-router-dom';
 import './SignIn.css';
-import Navbar from '../Navbar';
 
 const antIcon = <LoadingOutlined style={{ fontSize: 24 }} spin />;
 
@@ -26,6 +25,7 @@ const NormalLoginForm = (props) => {
   }
 
   return (
+    <body>
     <div className='form-body' style={{ marginTop: '11vh' }}>
       {errorMessage}
       {
@@ -43,6 +43,7 @@ const NormalLoginForm = (props) => {
           }}
           onFinish={onFinish}
         >
+          <h1>Login</h1>
           <Form.Item
             name="username"
             rules={[
@@ -52,7 +53,7 @@ const NormalLoginForm = (props) => {
               },
             ]}
           >
-            <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
+            <Input className="login-username" prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
           </Form.Item>
 
           <Form.Item
@@ -82,6 +83,7 @@ const NormalLoginForm = (props) => {
         </Form>
       }
     </div>
+    </body>
   );
 };
 
