@@ -24,8 +24,12 @@ const Product = ({ product }) => {
                                 {product.stock > 0 ? "In stock" : "Out of stock"}
                             </span>
                         <p/>
+                        {/* <button onClick={()=>this.product.addToCart(product)}> <-Doesnt work */}
+                        <button>
+                                 Add To Cart
+                        </button>
                         <div style={{fontSize: 'large'}}>
-                        {/*}
+            
                             Qty
                             <select>
                                 <option value = "1">1</option>
@@ -33,7 +37,7 @@ const Product = ({ product }) => {
                                 <option value = "3">3</option>
                                 <option value = "4">4</option>
                             </select>
-    */}
+   
                         </div>
                         
                     </Typography>
