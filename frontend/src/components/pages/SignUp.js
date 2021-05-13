@@ -105,6 +105,11 @@ const RegistrationForm = (props) => {
             },
             ({ getFieldValue }) => ({
               validator(_, value) {
+                
+                if (getFieldValue('password').length < 8) {
+                  return Promise.reject(new Error('Your password must be greater than 8 characters!'))
+                }
+                
                 if (!value || getFieldValue('password') === value) {
                   return Promise.resolve();
                 }

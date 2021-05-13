@@ -22,9 +22,7 @@ function Navbar({auth, logout}) {
                         <i className={click ? "fas fa-times" : "fas fa-bars"} />
                     </div>
                     <ul className={click ? "nav-menu active" : "nav-menu"}>
-                        {
-                            auth ?
-
+                        {auth ?
                                 <li className="nav-item">
                                     <Link to="/" className="nav-links" onClick={closeMobileMenu}>
                                         Welcome, {localStorage.username}.
