@@ -78,7 +78,7 @@ const NormalLoginForm = (props) => {
               Log in
           </button>
           <span className='form-input-login'>
-            <p></p>
+          <br></br>
           Or <NavLink to='/signup'>
               Sign up
             </NavLink>

@@ -131,6 +131,7 @@ const RegistrationForm = (props) => {
         <button className='form-input-btn' type='submit'>
           Sign up
         </button>
+        <br></br>
         <span className='form-input-login'>
           Already have an account? Login <NavLink to='/signin/'>
               here.
