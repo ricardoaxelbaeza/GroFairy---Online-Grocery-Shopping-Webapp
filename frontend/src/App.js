@@ -28,7 +28,7 @@ class App extends Component {
         <Router>
           <NavbarInitial {...this.props}/>
           <Switch>
-            <Route path='/' exact component={Home} />
+            <Route path='/' exact component={Home} {...this.props}/>
             <Route path='/grocerystores' exact component={GroceryStores} />
             <Route path='/signup' exact component={SignUp} />
             <Route path='/groceryproducts' exact component={GroceryProducts} />

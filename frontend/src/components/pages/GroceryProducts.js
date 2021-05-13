@@ -20,7 +20,6 @@ const GroceryProducts = (props) => {
         fetch('http://54.151.124.251:8000/groceryproducts/?id=' + id)
             .then(resp => resp.json())
             .then(resp => {
-                console.log(resp)
                 setProducts(resp)
             })
 
