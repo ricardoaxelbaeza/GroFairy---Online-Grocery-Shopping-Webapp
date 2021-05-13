@@ -56,14 +56,16 @@ const RegistrationForm = (props) => {
         scrollToFirstError
       >
         <h1>Sign Up</h1>
-        
+        <div className='form-inputs'>
+        <label className='form-label'>Username</label>
         <Form.Item
           name="Username"
           rules={[{ required: true, message: 'Please input your username!', whitespace: true }]}
           >
           <Input className="signup-username" placeholder="Username" />
         </Form.Item>  
-         
+        </div>
+        <label className='form-label'>E-mail</label>
         <Form.Item
           name="email"
           rules={[
@@ -79,7 +81,7 @@ const RegistrationForm = (props) => {
         >
           <Input className="signup-email"  placeholder="E-mail" />
         </Form.Item>
-
+        <label className='form-label'>Password</label>
         <Form.Item
           name="password"
           rules={[
@@ -94,7 +96,7 @@ const RegistrationForm = (props) => {
               prefix={<LockOutlined className="site-form-item-icon" />}
             />
         </Form.Item>
-
+        <label className='form-label'>Confirm Password</label>
         <Form.Item
           name="confirm"
           dependencies={['password']}

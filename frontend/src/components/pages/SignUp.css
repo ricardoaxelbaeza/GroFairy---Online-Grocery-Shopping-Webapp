@@ -23,6 +23,17 @@
     transform: translate(-50%, -50%);
     color: white;
 }
+
+.form-inputs {
+    margin-bottom: 0.5rem;
+    width: 80%;
+  }
+
+  .form-label {
+    margin-bottom: 6px;
+    color: #fff;
+  }
+
 .signup-form-button {
     text-align: center;
     width: 100%;

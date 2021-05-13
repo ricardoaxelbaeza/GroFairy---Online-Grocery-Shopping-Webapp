@@ -44,6 +44,7 @@ const NormalLoginForm = (props) => {
           onFinish={onFinish}
         >
           <h1>Login</h1>
+          <label className='form-label'>Username</label>
           <Form.Item
             name="username"
             rules={[
@@ -55,7 +56,7 @@ const NormalLoginForm = (props) => {
           >
             <Input className="login-username" prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Username" />
           </Form.Item>
-
+          <label className='form-label'>Password</label>
           <Form.Item
             name="password"
             rules={[
