@@ -21,8 +21,8 @@ const ShoppingCart = () => {
             })
     }, []) 
 
-    const handleUpdateCartQty = (cart_id, quantity) => {
-        const data = {cart_id, quantity}
+    const handleUpdateCartQuantity = (cart_id, item, price, quantity) => {
+        const data = {cart_id, item, price, quantity}
         const requestOptions = {
             method: 'PUT',
             headers: {
@@ -34,6 +34,11 @@ const ShoppingCart = () => {
         };
         fetch('http://127.0.0.1:8000/shoppingcart/', requestOptions)
         .then(response => response.json())
+        .then(data => {
+            console.log(data)
+        }).catch(rejected => {
+            console.log(rejected);
+        });
     }
 
     const handleRemoveFromCart = (cart_id) => {
@@ -67,7 +72,7 @@ const ShoppingCart = () => {
             <Grid container spacing={3}>
                 {cart.map((item) => (
                     <Grid item xs={12} sm={4} key={item.cart_id}>
-                        <CartItem item={item} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} />
+                        <CartItem item={item} onUpdateCartQuantity={handleUpdateCartQuantity} onRemoveFromCart={handleRemoveFromCart} />
                     </Grid>
                 ))}
             </Grid> 
