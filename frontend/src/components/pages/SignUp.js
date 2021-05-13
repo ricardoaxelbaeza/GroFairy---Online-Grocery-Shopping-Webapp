@@ -128,13 +128,14 @@ const RegistrationForm = (props) => {
         </Form.Item>
 
         <Form.Item {...tailFormItemLayout}>
-          <Button className="signup-form-button" type="primary" htmlType="submit">
-            Sign Up
-          </Button>
-          Or 
-          <NavLink to='/signin/'>
-              Already have an account? Sign in here.
+        <button className='form-input-btn' type='submit'>
+          Sign up
+        </button>
+        <span className='form-input-login'>
+          Already have an account? Login <NavLink to='/signin/'>
+              here.
           </NavLink>
+        </span>
         </Form.Item>
       </Form>
     </div>

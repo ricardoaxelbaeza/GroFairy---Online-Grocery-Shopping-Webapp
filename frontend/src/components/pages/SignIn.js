@@ -74,12 +74,16 @@ const NormalLoginForm = (props) => {
           </Form.Item>
 
           <Form.Item>
-            <Button type="primary" htmlType="submit" className="login-form-button">
+          <button className='form-input-btn' type='submit'>
               Log in
-            </Button>
-            Or <NavLink to='/signup'>
+          </button>
+          <span className='form-input-login'>
+            <p></p>
+          Or <NavLink to='/signup'>
               Sign up
             </NavLink>
+        </span>
+           
           </Form.Item>
         </Form>
       }
