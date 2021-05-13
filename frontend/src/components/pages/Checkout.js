@@ -3,6 +3,7 @@ import { Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider,
 import useStyles from '../CheckoutStyles'
 import AddressForm from '../AddressForm'
 import PaymentForm from '../PaymentForm'
+import ShoppingCart from './ShoppingCart'
 import { Link } from 'react-router-dom'
 
 const steps = ['Home Address', 'Payment Details']
@@ -14,7 +15,7 @@ const Checkout = () => {
 
     const Confirmation = () => (
         <div style={{textAlign: 'center'}}>
-            Thank you, please wait up to 20 minutes for your order to be delivered!
+            Thank you, please wait up to 5 seconds for your order to be delivered!
             <Divider/>
             <br />
             <br />
