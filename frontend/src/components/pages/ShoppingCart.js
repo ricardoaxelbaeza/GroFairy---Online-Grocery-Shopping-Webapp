@@ -5,14 +5,14 @@ import "./ShoppingCart.css";
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { Grid, Typography } from '@material-ui/core'
-// import Product from "../Product.js";
+import Product from "../Product.js";
 
 
 const ShoppingCart = () => {
     const [cart, setCart] = useState([]);
   
     useEffect(() => {
-      fetch('http://54.151.124.251:8000/shoppingcart/?format=json')
+      fetch('http://127.0.0.1:8000/shoppingcart/?format=json')
         .then(resp => resp.json())
         .then(resp => {
           console.log(resp)

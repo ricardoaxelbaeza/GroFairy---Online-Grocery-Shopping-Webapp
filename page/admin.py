@@ -10,6 +10,7 @@ from .models import Order_Item
 from .models import Grocery_Store_Stock
 from .models import User_Preferred_Store
 from .models import User_Preferred_Tag
+from .models import Shopping_Cart
 
 # Creation of the admin pages in localhost:8000/admin/. Completely unnecessary but can add/remove/view data from there if needed.
 admin.site.register(User)
@@ -23,3 +24,4 @@ admin.site.register(Order_Item)
 admin.site.register(Grocery_Store_Stock)
 admin.site.register(User_Preferred_Store)
 admin.site.register(User_Preferred_Tag)
+admin.site.register(Shopping_Cart)
