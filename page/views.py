@@ -38,6 +38,7 @@ def dbdump(request):
     grocery_store_stock = Grocery_Store_Stock.objects.all
     user_pref_stores = User_Preferred_Store.objects.all
     user_pref_tags = User_Preferred_Tag.objects.all
+    shopping_cart = Shopping_Cart.objects.all
 
     # Returns the dbdump.html with all variables to be used in the html set with strings.
     # To add more, just put a comma after the variables and follow suit.
@@ -113,15 +114,14 @@ class GroceryStoreStockView(APIView):
 class ShoppingCartView(APIView):
     serializer_class = ShoppingCartSerializer
 
-    def get(self, request, *args, **kwargs):
-        id = 1
+    def get(self, request):
         detail = [{'cart_id': detail.cart_id, 'item': detail.item, 'price': detail.price, 'quantity': detail.quantity
-                    } for detail in Shopping_Cart.objects.filter(pk=id)]
+                    } for detail in Shopping_Cart.objects.all()]
         
         return Response(detail)
     
     def post(self, request):
-        serializer = Shopping_Cart(data=request.data)
+        serializer = ShoppingCartSerializer(data=request.data)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)

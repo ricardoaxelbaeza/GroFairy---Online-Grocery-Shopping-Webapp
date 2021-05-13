@@ -1,3 +1,18 @@
+
+
+.form-body{
+
+    margin: 100px auto;
+    width: 1000px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 10px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width:100vw;
+}
+
 .signup-form {
     width: 280px;
     position: absolute;

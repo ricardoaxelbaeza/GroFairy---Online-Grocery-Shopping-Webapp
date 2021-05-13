@@ -5,7 +5,7 @@ import CartItem from "./CartItem";
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import { Grid, Typography } from '@material-ui/core'
-// import Product from "../Product.js";
+import Product from "../Product.js";
 
 
 const ShoppingCart = () => {
