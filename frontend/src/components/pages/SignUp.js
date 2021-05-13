@@ -58,6 +58,7 @@ const RegistrationForm = (props) => {
         <h1>Sign Up</h1>
         <div className='form-inputs'>
         <label className='form-label'>Username</label>
+        
         <Form.Item
           name="Username"
           rules={[{ required: true, message: 'Please input your username!', whitespace: true }]}
