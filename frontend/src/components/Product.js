@@ -1,5 +1,7 @@
 import React from 'react'
 import { Select, MenuItem, Button, Card, CardMedia, CardContent, CardActions, Typography } from '@material-ui/core'
+import Alert from '@material-ui/lab/Alert';
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import makeStyles from './GroceryStyles'
 import "./Product.css";
 
@@ -9,12 +11,9 @@ const Product = ({ product }) => {
     const [item, setItem] = React.useState(product.product_name);
     const [price, setPrice] = React.useState(product.unit_price);
     const [quantity, setQuantity] = React.useState();
+    var success;
 
     const handleSubmit = (event) => {
-        var a = 3
-        var b = "banana"
-        var c = 32.43
-        var d = 2
         const data = { cart_id, item, price, quantity};
         const requestOptions = {
             method: 'POST',
@@ -30,7 +29,10 @@ const Product = ({ product }) => {
         .then(response => response.json())
         .then(response => {
             console.log(response);
-        });
+            if(response.ok) {
+            }
+        }
+        );
     }
 
     const handleQuantityChange = (event) => {
@@ -56,7 +58,7 @@ const Product = ({ product }) => {
                                 {product.stock > 0 ? "In stock" : "Out of stock"}
                             </span>
                         <p/>
-                        <Button onClick={handleSubmit}>
+                        <Button className="add-cart-btn" onClick={handleSubmit}>
                                  Add To Cart
                         </Button>
                         <div style={{fontSize: 'large'}}>
@@ -66,6 +68,7 @@ const Product = ({ product }) => {
                             id="quantity"
                             value={quantity}
                             onChange={handleQuantityChange}
+                            defaultValue=""
                             >
                             <MenuItem value={1}>1</MenuItem>
                             <MenuItem value={2}>2</MenuItem>

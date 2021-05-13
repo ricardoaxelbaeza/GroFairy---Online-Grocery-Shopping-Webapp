@@ -1,13 +1,7 @@
-button {
+.add-cart-btn {
     grid-column: 1/-1;
-    padding: 10px 16px;
     background: black;
-    color: white;
+    color: rgb(79, 175, 175);
     border: 1px solid black;
     cursor: pointer;
-}
-
-#grocery-items {
-    
-    
 }
