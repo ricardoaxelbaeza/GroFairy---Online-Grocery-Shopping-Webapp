@@ -21,6 +21,43 @@ const ShoppingCart = () => {
             })
     }, []) 
 
+    const handleUpdateCartQty = (cart_id, quantity) => {
+        const data = {cart_id, quantity}
+        const requestOptions = {
+            method: 'PUT',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            mode: 'cors',
+            body: JSON.stringify(data)
+        };
+        fetch('http://127.0.0.1:8000/shoppingcart/', requestOptions)
+        .then(response => response.json())
+    }
+
+    const handleRemoveFromCart = (cart_id) => {
+        const data = {cart_id}
+        const requestOptions = {
+            method: 'DELETE',
+            headers: {
+                'Access-Control-Request-Method': '*',
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            mode: 'cors',
+            body: JSON.stringify(data)
+        };
+        fetch('http://127.0.0.1:8000/shoppingcart/', requestOptions)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+        }).catch(rejected => {
+            console.log(rejected);
+        });
+        
+    }
+
     const emptyCart = () => (
         <Typography variant="subtitle1">You have no items in your cart. Try adding some!</Typography>
     )
@@ -30,13 +67,13 @@ const ShoppingCart = () => {
             <Grid container spacing={3}>
                 {cart.map((item) => (
                     <Grid item xs={12} sm={4} key={item.cart_id}>
-                        <CartItem item={item} />
+                        <CartItem item={item} onUpdateCartQty={handleUpdateCartQty} onRemoveFromCart={handleRemoveFromCart} />
                     </Grid>
                 ))}
             </Grid> 
             <div className="card-details">
                 <Typography variant="h4">
-                    Subtotal: {subtotal()}
+                    Subtotal: ${subtotal()}
                 </Typography>
                 <Button className="empty" size="large" type="button" variant="contained">
                     Empty Cart

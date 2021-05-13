@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from rest_framework.views import APIView
 from .models import *
 from rest_framework.response import Response
@@ -125,3 +125,12 @@ class ShoppingCartView(APIView):
         if serializer.is_valid(raise_exception=True):
             serializer.save()
             return Response(serializer.data)
+
+    def delete(self, request):
+        operation=get_object_or_404(Shopping_Cart, cart_id=request.data['cart_id'])
+        operation.delete()
+
+        return Response('Item successfully deleted.')
+
+    def put(self, request):
+        pass
