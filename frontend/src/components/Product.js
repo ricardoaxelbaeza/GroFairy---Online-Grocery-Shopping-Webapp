@@ -4,6 +4,9 @@ import Alert from '@material-ui/lab/Alert';
 import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import makeStyles from './GroceryStyles'
 import "./Product.css";
+import { SnackbarProvider, useSnackbar } from "notistack";
+import SnackbarUtils from './SnackbarUtils.js';
+
 
 const Product = ({ product }) => {
     const classes = makeStyles();
@@ -11,7 +14,6 @@ const Product = ({ product }) => {
     const [item, setItem] = React.useState(product.product_name);
     const [price, setPrice] = React.useState(product.unit_price);
     const [quantity, setQuantity] = React.useState();
-    var success;
 
     const handleSubmit = (event) => {
         const data = { cart_id, item, price, quantity};
@@ -24,12 +26,17 @@ const Product = ({ product }) => {
             mode: 'cors',
             body: JSON.stringify(data)
         };
-
+        
         fetch('http://127.0.0.1:8000/shoppingcart/', requestOptions)
-        .then(response => response.json())
         .then(response => {
-            console.log(response);
-            if(response.ok) {
+            console.log(response.status);
+            console.log(response.token);
+            if(response.status == 200) {
+                SnackbarUtils.success("Added " + product.product_name + " to cart!")
+            } else if (response.status == 400) {
+                SnackbarUtils.error("Error! Did you already add this item?")
+            } else {
+                SnackbarUtils.error("Error! Did you specify a quantity?")
             }
         }
         );

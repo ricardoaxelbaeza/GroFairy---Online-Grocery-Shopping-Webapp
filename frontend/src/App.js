@@ -13,6 +13,7 @@ import SignIn from "./components/pages/SignIn"
 import { connect } from 'react-redux'
 import * as actions from './components/pages/actions/auth'
 import Checkout from './components/pages/Checkout'
+import { SnackbarProvider } from 'notistack';
 
 
 
@@ -27,15 +28,17 @@ class App extends Component {
       <>
         <Router>
           <NavbarInitial {...this.props}/>
-          <Switch>
-            <Route path='/' exact component={Home} {...this.props}/>
-            <Route path='/grocerystores' exact component={GroceryStores} />
-            <Route path='/signup' exact component={SignUp} />
-            <Route path='/groceryproducts' exact component={GroceryProducts} />
-            <Route path='/shoppingcart' exact component={ShoppingCart}/>
-            <Route path='/signin' exact component={SignIn} />
-            <Route path='/checkout' exact component={Checkout} />
-          </Switch>
+          <SnackbarProvider>
+            <Switch>
+              <Route path='/' exact component={Home} {...this.props}/>
+              <Route path='/grocerystores' exact component={GroceryStores} />
+              <Route path='/signup' exact component={SignUp} />
+              <Route path='/groceryproducts' exact component={GroceryProducts} />
+              <Route path='/shoppingcart' exact component={ShoppingCart}/>
+              <Route path='/signin' exact component={SignIn} />
+              <Route path='/checkout' exact component={Checkout} />
+            </Switch>
+          </SnackbarProvider>
         </Router>
       </>
     )

@@ -3,12 +3,16 @@ import { Grid } from '@material-ui/core'
 import Store from '../Store'
 import { useState, useEffect } from 'react'
 import SearchBar from '../SearchBar'
+import { SnackbarProvider, useSnackbar } from "notistack";
+import SnackbarUtils from '../SnackbarUtils.js';
 
 const GroceryStores = (props) => {
   const [stores, setStores] = useState([]);
   const [searchText, setSearchText] = useState('');
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
 
   useEffect(() => {
+    SnackbarUtils.setSnackBar(enqueueSnackbar,closeSnackbar)
     fetch('http://54.151.124.251:8000/grocerystores/?format=json')
       .then(resp => resp.json())
       .then(resp => {
