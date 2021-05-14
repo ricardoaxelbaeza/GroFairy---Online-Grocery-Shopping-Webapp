@@ -25,15 +25,20 @@ const Checkout = () => {
     const classes = useStyles();
     const [shippingData, setShippingData] = useState({});
 
+    function getRandomInt(max) {
+        return Math.floor(Math.random() * max);
+      }
+
     const Confirmation = () => (
         <div style={{textAlign: 'center'}}>
-            Thank you, please wait up to 5 seconds for your order to be delivered!
+            Thank you, please wait up to {getRandomInt(120)} minutes for your order to be delivered!
             <Divider/>
             <br />
             <br />
             <Button component={Link} to='/' variant="contained" color='primary'>Back To Homepage</Button>
         </div>
     )
+    
 
     const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
     const lastStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
