@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 const steps = ['Home Address', 'Payment Details']
 
 const Checkout = () => {
-    const url = 'http://127.0.0.1:8000/shoppingcart/?format=json'
+    const url = 'http://54.151.124.251:8000/shoppingcart/?format=json'
     const [cart, setCart] = useState(null);
 
     useEffect(() => {
