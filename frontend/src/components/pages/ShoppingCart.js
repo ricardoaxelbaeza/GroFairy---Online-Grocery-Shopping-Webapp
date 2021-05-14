@@ -68,7 +68,7 @@ const ShoppingCart = () => {
     )
 
     const filledCart = () => (
-        <>
+        <div className="shopping-cart">
             <Grid container spacing={3}>
                 {cart.map((item) => (
                     <Grid item xs={12} sm={4} key={item.cart_id}>
@@ -80,14 +80,11 @@ const ShoppingCart = () => {
                 <Typography variant="h4">
                     Subtotal: ${subtotal()}
                 </Typography>
-                <Button className="empty" size="large" type="button" variant="contained">
-                    Empty Cart
-                </Button>
                 <Button className="checkout" component={Link} to="/checkout" size="large" type="button" variant="contained">
                     Checkout
                 </Button>
             </div>
-        </>
+        </div>
     )
 
     const subtotal = () => {
@@ -95,7 +92,7 @@ const ShoppingCart = () => {
         cart.forEach (item => {
             subtotal = subtotal + (item.price * item.quantity)
         })
-        return subtotal;
+        return Math.round(subtotal * 100) / 100;
     }
 
     if(cart) {

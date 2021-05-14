@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button } from '@material-ui/core'
 import useStyles from '../CheckoutStyles'
 import AddressForm from '../AddressForm'
@@ -9,6 +9,18 @@ import { Link } from 'react-router-dom'
 const steps = ['Home Address', 'Payment Details']
 
 const Checkout = () => {
+    const url = 'http://127.0.0.1:8000/shoppingcart/?format=json'
+    const [cart, setCart] = useState(null);
+
+    useEffect(() => {
+        fetch(url)
+            .then(resp => resp.json())
+            .then(data => {
+                console.log(data)
+                setCart(data)
+            })
+    }, []) 
+
     const [activeStep, setActiveStep] = useState(0);
     const classes = useStyles();
     const [shippingData, setShippingData] = useState({});
@@ -33,7 +45,7 @@ const Checkout = () => {
 
     const Form = () => activeStep === 0
         ? <AddressForm next={next}/>
-        : <PaymentForm lastStep={lastStep} nextStep = {nextStep}/>
+        : <PaymentForm cart={cart} lastStep={lastStep} nextStep = {nextStep}/>
     
     return (
         <>

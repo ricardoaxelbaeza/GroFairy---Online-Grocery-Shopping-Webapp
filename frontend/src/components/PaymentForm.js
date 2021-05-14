@@ -6,10 +6,19 @@ import Review from './Review'
 
 const stripePromise = loadStripe('...');
 
-const PaymentForm = ({ lastStep, nextStep }) => {
+const PaymentForm = ({ cart, lastStep, nextStep }) => {
+        
+    const subtotal = () => {
+        let subtotal = 0;
+        cart.forEach (item => {
+            subtotal = subtotal + (item.price * item.quantity)
+        })
+        return Math.round(subtotal * 100) / 100;
+    }
+
     return (
         <>
-            <Review/>
+            <Review cart={cart}/>
             <Divider/>
             <Typography variant='h6' gutterBottom style={{margin: '20px 0'}}>Payment Method</Typography>
             <Elements stripe={stripePromise}>
@@ -22,7 +31,7 @@ const PaymentForm = ({ lastStep, nextStep }) => {
                             <div style={{display: 'flex', justifyContent: 'space-between'}}>
                                 <Button variant='outlined' onClick={lastStep}> Back</Button>
                                 <Button variant='contained' onClick={nextStep} disabled={!stripe} color='primary'>
-                                    Pay $50
+                                    Pay ${subtotal()}
                                 </Button>
                             </div>
                         </form>

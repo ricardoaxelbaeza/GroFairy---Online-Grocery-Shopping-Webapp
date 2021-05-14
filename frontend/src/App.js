@@ -32,7 +32,7 @@ class App extends Component {
             <Route path='/grocerystores' exact component={GroceryStores} />
             <Route path='/signup' exact component={SignUp} />
             <Route path='/groceryproducts' exact component={GroceryProducts} />
-            <Route path='/shoppingcart' exact component={ShoppingCart} />
+            <Route path='/shoppingcart' exact component={ShoppingCart}/>
             <Route path='/signin' exact component={SignIn} />
             <Route path='/checkout' exact component={Checkout} />
           </Switch>
