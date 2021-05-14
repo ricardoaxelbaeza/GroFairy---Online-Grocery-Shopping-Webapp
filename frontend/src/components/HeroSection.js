@@ -5,9 +5,11 @@ import './HeroSection.css'
 
 document.title = "GroFairy"
 class HeroSection extends React.Component {
+  /*
   constructor(props) {
     super(props);
   }
+  */
   render() {
     return (
       <div className='hero-root' style={{ marginTop: '11vh' }}>
@@ -16,7 +18,7 @@ class HeroSection extends React.Component {
           backgroundSize: 'cover', maxWidth: '100vw', backgroundRepeat: 'no-repeat', backgroundPosition: 'center',
         }}>
 
-          {this.props.isAuthenticated ?
+          {!this.props.isAuthenticated ?
             <div className='hero-btns'>
               <Button
                 url='/grocerystores'
@@ -38,7 +40,7 @@ class HeroSection extends React.Component {
               <p />
               <Button
                 url='/signin'
-                style="margin-left:  30"
+                style={{marginLeft: "30"}}
                 className='btns'
                 buttonStyle='btn--outline'
                 buttonSize='btn--large'

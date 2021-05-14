@@ -1,5 +1,5 @@
-import ReactDOM from 'react-dom';
-import { Form, Input, Button, Checkbox, Spin } from 'antd';
+// import ReactDOM from 'react-dom';
+import { Form, Input, Spin } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { connect } from 'react-redux'
 import * as actions from './actions/auth'

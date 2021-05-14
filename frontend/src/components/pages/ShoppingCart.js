@@ -4,8 +4,8 @@ import "./ShoppingCart.css";
 import CartItem from "./CartItem/CartItem.js";
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { Button, Container, Grid, ListItemSecondaryAction, Typography } from '@material-ui/core'
-import Product from "../Product.js";
+import { Button, Container, Grid, Typography } from '@material-ui/core'
+// import Product from "../Product.js";
 
 
 const ShoppingCart = () => {

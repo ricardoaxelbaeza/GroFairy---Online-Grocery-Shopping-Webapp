@@ -3,7 +3,7 @@ import { Grid } from '@material-ui/core'
 import Store from '../Store'
 import { useState, useEffect } from 'react'
 import SearchBar from '../SearchBar'
-import { SnackbarProvider, useSnackbar } from "notistack";
+import { useSnackbar } from "notistack";
 import SnackbarUtils from '../SnackbarUtils.js';
 
 const GroceryStores = (props) => {
@@ -20,7 +20,7 @@ const GroceryStores = (props) => {
         setStores(resp)
       })
 
-  }, [])
+  }, )
   return (
     <>
       <div className="groceryPage">
@@ -35,6 +35,7 @@ const GroceryStores = (props) => {
             else if (val.store_name.toLowerCase().includes(searchText.toLowerCase())){
               return val
             }
+            return ""
           }).map((store) => (
             <Grid item key={store.store_id} xs={12} sm={6} md={4} lg={3} style={{ border: '10px solid #EE6590' }}>
               <Store store={store} />
