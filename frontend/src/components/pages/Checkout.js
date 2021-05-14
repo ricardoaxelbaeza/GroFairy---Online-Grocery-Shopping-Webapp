@@ -1,20 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button } from '@material-ui/core'
 import useStyles from '../CheckoutStyles'
 import AddressForm from '../AddressForm'
 import PaymentForm from '../PaymentForm'
+import ShoppingCart from './ShoppingCart'
 import { Link } from 'react-router-dom'
 
 const steps = ['Home Address', 'Payment Details']
 
 const Checkout = () => {
+    const url = 'http://54.151.124.251:8000/shoppingcart/?format=json'
+    const [cart, setCart] = useState(null);
+
+    useEffect(() => {
+        fetch(url)
+            .then(resp => resp.json())
+            .then(data => {
+                console.log(data)
+                setCart(data)
+            })
+    }, []) 
+
     const [activeStep, setActiveStep] = useState(0);
     const classes = useStyles();
     const [shippingData, setShippingData] = useState({});
 
     const Confirmation = () => (
         <div style={{textAlign: 'center'}}>
-            Thank you, please wait up to 20 minutes for your order to be delivered!
+            Thank you, please wait up to 5 seconds for your order to be delivered!
             <Divider/>
             <br />
             <br />
@@ -32,7 +45,7 @@ const Checkout = () => {
 
     const Form = () => activeStep === 0
         ? <AddressForm next={next}/>
-        : <PaymentForm lastStep={lastStep} nextStep = {nextStep}/>
+        : <PaymentForm cart={cart} lastStep={lastStep} nextStep = {nextStep}/>
     
     return (
         <>

@@ -9,7 +9,7 @@ import Product from "../Product.js";
 
 
 const ShoppingCart = () => {
-    const url = 'http://127.0.0.1:8000/shoppingcart/?format=json'
+    const url = 'http://54.151.124.251:8000/shoppingcart/?format=json'
     const [cart, setCart] = useState(null);
 
     useEffect(() => {
@@ -32,7 +32,7 @@ const ShoppingCart = () => {
             mode: 'cors',
             body: JSON.stringify(data)
         };
-        fetch('http://127.0.0.1:8000/shoppingcart/', requestOptions)
+        fetch('http://54.151.124.251:8000/shoppingcart/', requestOptions)
         .then(response => response.json())
         .then(data => {
             console.log(data)
@@ -53,7 +53,7 @@ const ShoppingCart = () => {
             mode: 'cors',
             body: JSON.stringify(data)
         };
-        fetch('http://127.0.0.1:8000/shoppingcart/', requestOptions)
+        fetch('http://54.151.124.251:8000/shoppingcart/', requestOptions)
         .then(response => response.json())
         .then(data => {
             console.log(data)
@@ -68,7 +68,7 @@ const ShoppingCart = () => {
     )
 
     const filledCart = () => (
-        <>
+        <div className="shopping-cart">
             <Grid container spacing={3}>
                 {cart.map((item) => (
                     <Grid item xs={12} sm={4} key={item.cart_id}>
@@ -80,14 +80,11 @@ const ShoppingCart = () => {
                 <Typography variant="h4">
                     Subtotal: ${subtotal()}
                 </Typography>
-                <Button className="empty" size="large" type="button" variant="contained">
-                    Empty Cart
-                </Button>
                 <Button className="checkout" component={Link} to="/checkout" size="large" type="button" variant="contained">
                     Checkout
                 </Button>
             </div>
-        </>
+        </div>
     )
 
     const subtotal = () => {
@@ -95,7 +92,7 @@ const ShoppingCart = () => {
         cart.forEach (item => {
             subtotal = subtotal + (item.price * item.quantity)
         })
-        return subtotal;
+        return Math.round(subtotal * 100) / 100;
     }
 
     if(cart) {
