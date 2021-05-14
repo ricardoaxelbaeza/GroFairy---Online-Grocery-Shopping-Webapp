@@ -27,7 +27,7 @@ const Product = ({ product }) => {
             body: JSON.stringify(data)
         };
         
-        fetch('http://127.0.0.1:8000/shoppingcart/', requestOptions)
+        fetch('http://54.151.124.251:8000/shoppingcart/', requestOptions)
         .then(response => {
             console.log(response.status);
             console.log(response.token);
