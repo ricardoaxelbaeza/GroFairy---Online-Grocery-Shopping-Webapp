@@ -19,7 +19,7 @@ const ShoppingCart = () => {
                 console.log(data)
                 setCart(data)
             })
-    }, []) 
+    }, [cart]) 
 
     const handleUpdateCartQuantity = (cart_id, item, price, quantity) => {
         const data = {cart_id, item, price, quantity}
@@ -60,11 +60,10 @@ const ShoppingCart = () => {
         }).catch(rejected => {
             console.log(rejected);
         });
-        
     }
 
     const emptyCart = () => (
-        <Typography variant="subtitle1">You have no items in your cart. Try adding some!</Typography>
+        <Typography variant="subtitle1" className="empty-cart">You have no items in your cart. Try adding some!</Typography>
     )
 
     const filledCart = () => (
