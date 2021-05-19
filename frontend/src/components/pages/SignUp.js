@@ -1,12 +1,12 @@
 import React from 'react';
-import { Form, Input, Select, Button } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
+import { Form, Input } from 'antd';
+import { LockOutlined } from '@ant-design/icons';
 import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux'
 import * as actions from './actions/auth'
 import "./SignUp.css"
 
-
+/*
 const formItemLayout = {
   labelCol: {
     xs: {
@@ -25,6 +25,7 @@ const formItemLayout = {
     },
   },
 };
+*/
 const tailFormItemLayout = {
   wrapperCol: {
     xs: {
@@ -39,7 +40,7 @@ const tailFormItemLayout = {
 };
 
 const RegistrationForm = (props) => {
-  const [form] = Form.useForm();
+  // const [form] = Form.useForm();
 
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
@@ -57,14 +58,14 @@ const RegistrationForm = (props) => {
       >
         <h1>Sign Up</h1>
         <div className='form-inputs'>
-        <label className='form-label'>Username</label>
-        
-        <Form.Item
-          name="Username"
-          rules={[{ required: true, message: 'Please input your username!', whitespace: true }]}
+          <label className='form-label'>Username</label>
+
+          <Form.Item
+            name="Username"
+            rules={[{ required: true, message: 'Please input your username!', whitespace: true }]}
           >
-          <Input className="signup-username" placeholder="Username" />
-        </Form.Item>  
+            <Input className="signup-username" placeholder="Username" />
+          </Form.Item>
         </div>
         <label className='form-label'>E-mail</label>
         <Form.Item
@@ -80,7 +81,7 @@ const RegistrationForm = (props) => {
             },
           ]}
         >
-          <Input className="signup-email"  placeholder="E-mail" />
+          <Input className="signup-email" placeholder="E-mail" />
         </Form.Item>
         <label className='form-label'>Password</label>
         <Form.Item
@@ -94,8 +95,8 @@ const RegistrationForm = (props) => {
           hasFeedback
         >
           <Input.Password placeholder="Password"
-              prefix={<LockOutlined className="site-form-item-icon" />}
-            />
+            prefix={<LockOutlined className="site-form-item-icon" />}
+          />
         </Form.Item>
         <label className='form-label'>Confirm Password</label>
         <Form.Item
@@ -109,11 +110,11 @@ const RegistrationForm = (props) => {
             },
             ({ getFieldValue }) => ({
               validator(_, value) {
-                
+
                 if (getFieldValue('password').length < 8) {
                   return Promise.reject(new Error('Your password must be greater than 8 characters!'))
                 }
-                
+
                 if (!value || getFieldValue('password') === value) {
                   return Promise.resolve();
                 }
@@ -124,20 +125,20 @@ const RegistrationForm = (props) => {
           ]}
         >
           <Input.Password placeholder="Confirm Password"
-              prefix={<LockOutlined className="site-form-item-icon" />}
-            />
+            prefix={<LockOutlined className="site-form-item-icon" />}
+          />
         </Form.Item>
 
         <Form.Item {...tailFormItemLayout}>
-        <button className='form-input-btn' type='submit'>
-          Sign up
+          <button className='form-input-btn' type='submit'>
+            Sign up
         </button>
-        <br></br>
-        <span className='form-input-login'>
-          Already have an account? Login <NavLink to='/signin/'>
+          <br></br>
+          <span className='form-input-login'>
+            Already have an account? Login <NavLink to='/signin/'>
               here.
           </NavLink>
-        </span>
+          </span>
         </Form.Item>
       </Form>
     </div>
@@ -145,16 +146,16 @@ const RegistrationForm = (props) => {
 };
 
 const mapStateToProps = (state) => {
-    return {
-      loading: state.loading,
-      error: state.error
-    }
+  return {
+    loading: state.loading,
+    error: state.error
   }
-  
-  const mapDispatchToProps = dispatch => {
-    return {
-      onAuth: (username, email, password1, password2) => dispatch(actions.authSignup(username, email, password1, password2))
-    }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onAuth: (username, email, password1, password2) => dispatch(actions.authSignup(username, email, password1, password2))
   }
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(RegistrationForm);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(RegistrationForm);

@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button } from '@material-ui/core'
+import { Paper, Stepper, Step, StepLabel, Typography, Divider, Button } from '@material-ui/core'
 import useStyles from '../CheckoutStyles'
 import AddressForm from '../AddressForm'
 import PaymentForm from '../PaymentForm'
-import ShoppingCart from './ShoppingCart'
 import { Link } from 'react-router-dom'
 
 const steps = ['Home Address', 'Payment Details']
@@ -23,7 +22,7 @@ const Checkout = () => {
 
     const [activeStep, setActiveStep] = useState(0);
     const classes = useStyles();
-    const [shippingData, setShippingData] = useState({});
+    const [setShippingData] = useState({});
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);

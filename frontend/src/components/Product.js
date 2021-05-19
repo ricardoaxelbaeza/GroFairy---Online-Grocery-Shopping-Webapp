@@ -1,18 +1,18 @@
 import React from 'react'
 import { Select, MenuItem, Button, Card, CardMedia, CardContent, CardActions, Typography } from '@material-ui/core'
-import Alert from '@material-ui/lab/Alert';
-import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+// import Alert from '@material-ui/lab/Alert';
+// import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
 import makeStyles from './GroceryStyles'
 import "./Product.css";
-import { SnackbarProvider, useSnackbar } from "notistack";
+// import { SnackbarProvider, useSnackbar } from "notistack";
 import SnackbarUtils from './SnackbarUtils.js';
 
 
 const Product = ({ product }) => {
     const classes = makeStyles();
-    const [cart_id, setCartId] = React.useState(product.product_id);
-    const [item, setItem] = React.useState(product.product_name);
-    const [price, setPrice] = React.useState(product.unit_price);
+    const [cart_id] = React.useState(product.product_id);
+    const [item] = React.useState(product.product_name);
+    const [price] = React.useState(product.unit_price);
     const [quantity, setQuantity] = React.useState();
 
     const handleSubmit = (event) => {
@@ -27,13 +27,13 @@ const Product = ({ product }) => {
             body: JSON.stringify(data)
         };
         
-        fetch('http://127.0.0.1:8000/shoppingcart/', requestOptions)
+        fetch('http://54.151.124.251:8000/shoppingcart/', requestOptions)
         .then(response => {
             console.log(response.status);
             console.log(response.token);
-            if(response.status == 200) {
+            if(response.status === 200) {
                 SnackbarUtils.success("Added " + product.product_name + " to cart!")
-            } else if (response.status == 400) {
+            } else if (response.status === 400) {
                 SnackbarUtils.error("Error! Did you already add this item?")
             } else {
                 SnackbarUtils.error("Error! Did you specify a quantity?")
