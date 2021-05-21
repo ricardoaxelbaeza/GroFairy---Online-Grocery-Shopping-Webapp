@@ -22,7 +22,7 @@ const Checkout = () => {
 
     const [activeStep, setActiveStep] = useState(0);
     const classes = useStyles();
-    const [setShippingData] = useState({});
+    const [shippingData, setShippingData] = useState({});
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
