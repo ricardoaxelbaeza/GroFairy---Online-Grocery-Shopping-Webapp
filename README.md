@@ -7,8 +7,9 @@ To resolve this conflict, GroFairy was created as an online web application that
 
 <iframe width="640" height="360" src="" title="GroFairy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-#YouTube Video
-[![Video](https://i.ytimg.com/vi/Ic81CvSwnFk/hqdefault.jpg)]([https://www.youtube.com/watch?v=jXnoFqcAkQA]
+# YouTube Video
+[![Video](https://i.ytimg.com/vi/Ic81CvSwnFk/hqdefault.jpg)](https://www.youtube.com/watch?v=HVsRenFVKA4)
+
 
 
 
