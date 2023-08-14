@@ -5,10 +5,7 @@ During the COVID-19 pandemic, there was an evident decrease in outdoor activitie
 
 To resolve this conflict, GroFairy was created as an online web application that held multiple (mock) grocery stores with items stored in a databse, allowing users to add multiple items from multiple grocery stores and purchase their items all in one place. 
 
-
-
-
-[<img src="[https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg](https://i.ytimg.com/vi/Ic81CvSwnFk/hqdefault.jpg?sqp=-oaymwE9CNACELwBSFryq4qpAy8IARUAAAAAGAElAADIQj0AgKJDeAHwAQH4AaYJgALqBYoCDAgAEAEYZSBaKGAwDw==&rs=AOn4CLDN6uzCXMTV55frn1-NbRT2CF6PYw)https://i.ytimg.com/vi/Ic81CvSwnFk/hqdefault.jpg?sqp=-oaymwE9CNACELwBSFryq4qpAy8IARUAAAAAGAElAADIQj0AgKJDeAHwAQH4AaYJgALqBYoCDAgAEAEYZSBaKGAwDw==&rs=AOn4CLDN6uzCXMTV55frn1-NbRT2CF6PYw" width="50%">](https://www.youtube.com/watch?v=HVsRenFVKA4 "Now in Android: 55")
+[![Video](https://img.youtube.com/vi/jXnoFqcAkQA/maxresdefault.jpg)](https://www.youtube.com/watch?v=jXnoFqcAkQA)
 
 
 
